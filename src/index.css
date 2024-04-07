@@ -4,13 +4,13 @@
 
 body{
     margin: 0;
+    background-color: black;
 }
 
 .navbar{
   display: flex;
   align-items: center;
   height: 65px;
-  background-color: darkslategrey;
   color: white;
   padding: 20px;
   box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
@@ -22,13 +22,59 @@ body{
 }
 
 .navbar--title{
-  font-size: 1.25rem;
+  font-size: 1.40rem;
   margin-right: auto;
 }
 
 .socials{
   height: 28.1px;
-  width: 32.3px;
+  width: 32.2px;
   margin-right: 10px;
-  border-radius: 50%;
+  border-radius: 9px;
+}
+
+section{
+  padding: 20px;
+}
+
+.section--name{
+  font-family: "Verdana";
+  color:skyblue;
+}
+
+.cards--list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card{
+  width: 30%;    
+  display: inline-flex;       
+  flex-direction: column;
+  position: relative;
+  flex: 0 0 auto; 
+  margin-right: 30px;
+  margin-bottom: 30px;
+  margin-left: 16px;
+  align-items: center;
+}
+
+.card--image{
+  width: 100%;
+  border-radius: 9px;
+  margin-bottom: 3px;
+}
+
+.card--title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Futura";
+  color: white;
+}
+
+.card--description{
+  font-family: "Georgia";
+  font-size: 12px; 
+  color: gray;
 }

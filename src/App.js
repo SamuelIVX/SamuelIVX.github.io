@@ -2,14 +2,25 @@ import React from "react"
 import Navbar from "./components/Navbar.js"
 import Header from "./components/Header.js"
 import Card from "./components/Card.js"
+import cardData from "./cardData.js"
 import Footer from "./components/Footer.js"
 
 export default function App(){
+
+const cards = cardData.map( item => <Card key = {item.id} item = {item}/> )
+
     return(
         <div>
             <Navbar/>
+
             <Header/>
-            <Card/>
+
+            <section className = "card--list">
+                <h1 className = "section--name"> Recent Projects | </h1>
+                {cards}
+                <hr color="skyblue"></hr>
+            </section>
+
             <Footer/>
         </div>
     )
