@@ -39,7 +39,7 @@ section{
 
 .section--name{
   font-family: "Verdana";
-  color:skyblue;
+  color: orange;
 }
 
 .cards--list{
@@ -77,4 +77,42 @@ section{
   font-family: "Georgia";
   font-size: 12px; 
   color: gray;
+}
+
+.footer{
+  text-align: center;
+  background-color: #141414;
+  padding: 50px;
+}
+
+.footer--contact{
+  font-size: 1.2rem;
+  color: orange;
+}
+
+.footer--email{
+  font-size: 1.1rem;
+}
+
+a[href^="mailto:"] {
+  color: white;
+}
+
+.footer--description{
+  font-size: 12px;
+  margin-top: 80px;
+}
+
+.footer--rights{
+  color: orange;
+}
+
+.footer--designer{
+  color: white;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin: 0px 5px;
+  color: orange;
 }

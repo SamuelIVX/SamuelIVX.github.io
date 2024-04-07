@@ -18,9 +18,9 @@ const cards = cardData.map( item => <Card key = {item.id} item = {item}/> )
             <section className = "card--list">
                 <h1 className = "section--name"> Recent Projects | </h1>
                 {cards}
-                <hr color="skyblue"></hr>
             </section>
 
+            <hr color = "orange"></hr>
             <Footer/>
         </div>
     )
