@@ -10,23 +10,25 @@ import Footer from "./components/Footer.js"
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 /*
-export default function App(){
-const cards = cardData.map( item => <Card key = {item.id} item = {item}/> )
+//!Development Build
+npm start
 
-    return(
-        <div className="background">
-            <LeftSideNavbar/>
+//!Production Build
+npm run build
+serve -s build
 
-            <MainContent/>
+//!Always commit and push chanegs to Github
+git add . 
+git commit -m "Message"
+git push -u origin main
 
-            <TreeTimeline/>
+//!Then deploy said App
+npm run deploy
 
-                {cards}
-
-            <Footer/>
-        </div>
-    )
-}
+//!Debugging Purposes
+git config --global http.postBuffer 524288000          
+git fetch prune
+rm -rf node_modules/.cache/gh-pages        
 */
 export default function App() {
     const cards = cardData.map(item => <Card key={item.id} item={item} />);
