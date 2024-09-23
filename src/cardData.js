@@ -1,20 +1,51 @@
 export default [
     {
         id: 1,
-        title: "Pending...",
-        description: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        imageUrl: "../images/afe.jpeg"
+        title: "Amazon Intern Project",
+        description: "Built using React to show off a mimicked-Travel Journal.",
+        imageUrl: "../images/AWS.png",
+        servicesUsed: [
+            "S3",
+            "SNS",
+            "SQS",
+            "Lambda",
+            "Glue",
+            "AWS Code Pipeline",
+            "TypeScript",
+            "Python",
+        ]
     },
     {
         id: 2,
-        title: "Pending...",
-        description: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        imageUrl: "../images/coding.jpeg"
+        title: "High-Low-Game",
+        description: "A simple guessing game against the computer.",
+        imageUrl: "../images/highlow_game.png",
+        servicesUsed: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ]
     },
     {
         id: 3,
-        title: "Pending...",
-        description: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        imageUrl: "../images/ph.png"
+        title: "My Pokedex",
+        description: "An interactive pokedex using pokeapi.co",
+        imageUrl: "../images/pokedex_pic.png",
+        servicesUsed: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "pokeco.api"
+        ]
+    },
+    {
+        id: 4,
+        title: "Travel Journal",
+        description: "Built using React to show off a mimicked-Travel Journal.",
+        imageUrl: "../images/travel_journal_pic.png",
+        servicesUsed: [
+            "React",
+        ]
     },
 ]
+
