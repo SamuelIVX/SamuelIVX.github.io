@@ -2,7 +2,7 @@ export default [
     {
         id: 1,
         title: "Amazon Intern Project",
-        description: "Built using React to show off a mimicked-Travel Journal.",
+        description: "Used Amazon's external + internal resources and services to develop an intern project.",
         imageUrl: "../images/AWS.png",
         servicesUsed: [
             "S3",
