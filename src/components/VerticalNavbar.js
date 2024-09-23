@@ -11,7 +11,7 @@ export default function LeftSideNavbar(){
                 <li><a href="#"><i className="fas fa-address-card ABOUT"></i> About</a></li>
                 <li><a href="#"><i className="fa-solid fa-user-tie"></i> Experience</a></li>
                 <li><a href="#"><i className="fa-solid fa-laptop-code experience"></i> Projects</a></li>
-                <li><a href="../public/SHB_Resume.pdf" download><i className="fas fa-project-diagram"></i> Resume</a></li>
+                <li><a href="/SHB_Resume.pdf" download><i className="fas fa-project-diagram"></i> Resume</a></li>
                 <li><a href="#"><i className="fa-solid fa-file CV"></i> CV</a></li>
             </ul> 
 
