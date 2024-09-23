@@ -10,20 +10,25 @@ import Footer from "./components/Footer.js"
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 /*
+//!Development Build
+npm start
 
+//!Production Build
 npm run build
-npm install -g serve
 serve -s build
 
+//!Always commit and push chanegs to Github
 git add . 
 git commit -m "Message"
 git push -u origin main
-OR
-npm run deploy -- -m "Message"
 
+//!Then deploy said App
+npm run deploy
+
+//!Debugging Purposes
 git config --global http.postBuffer 524288000          
 git fetch prune
- rm -rf node_modules/.cache/gh-pages        
+rm -rf node_modules/.cache/gh-pages        
 */
 export default function App() {
     const cards = cardData.map(item => <Card key={item.id} item={item} />);
