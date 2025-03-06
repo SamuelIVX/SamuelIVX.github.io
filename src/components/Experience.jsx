@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -46,6 +47,18 @@ const ExperienceCard = ({ experience }) => (
     </ul>
   </VerticalTimelineElement>
 );
+
+// Prop validation
+ExperienceCard.propTypes = {
+  experience: PropTypes.shape({
+    date: PropTypes.string.isRequired, // date is required and must be a string
+    icon: PropTypes.string.isRequired, // icon is required and must be a string (URL)
+    iconBg: PropTypes.string.isRequired, // iconBg is required and must be a string (color)
+    company_name: PropTypes.string.isRequired, // company_name is required and must be a string
+    title: PropTypes.string.isRequired, // title is required and must be a string
+    points: PropTypes.arrayOf(PropTypes.string).isRequired, // points is required and must be an array of strings
+  }).isRequired, // experience itself is required
+};
 
 const Experience = () => {
   return (
