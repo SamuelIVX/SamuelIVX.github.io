@@ -304,6 +304,7 @@ const projects = [
       },
     ],
     image: mL,
+    source_code_link: "https://github.com/SamuelIVX/machineLearningModel",
   },
 ];
 
