@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
@@ -33,6 +34,13 @@ const ServiceCard = ({ index, title, icon }) => {
       </motion.div>
     </Tilt>
   );
+};
+
+// Prop validation
+ServiceCard.propTypes = {
+  index: PropTypes.number.isRequired, // index is required and must be a number
+  title: PropTypes.string.isRequired, // title is required and must be a string
+  icon: PropTypes.string.isRequired, // icon is required and must be a string (URL)
 };
 
 const About = () => {
