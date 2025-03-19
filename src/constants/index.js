@@ -46,15 +46,15 @@ const services = [
     icon: web,
   },
   {
-    title: "Full-Stack Developer",
+    title: "Front-End Developer",
     icon: mobile,
   },
   {
-    title: "Cloud Engineer",
+    title: "Cloud Computing Engineer",
     icon: backend,
   },
   {
-    title: "Data Engineer",
+    title: "Machine Learning Engineer",
     icon: creator,
   },
 ];
@@ -167,7 +167,7 @@ const experiences = [
 
 const projects = [
   {
-    name: "Full-Stack E-Commerce Website Application",
+    name: "Full-Stack E-Commerce Web Application",
     description:
       "Developed a full-stack, responsive e-commerce web application using Next.js and a headless CMS (Wix JavaScript SDK) to showcase advanced product filtering, category management, and cart functionalities. Leveraged modern frameworks, state management with Zustand, and server-side rendering for optimal performance and scalability.",
     tags: [
@@ -196,7 +196,7 @@ const projects = [
     source_code_link: "https://github.com/SamuelIVX/ecommerceWebsite",
   },
   {
-    name: "Full-Stack Admin Dashboard",
+    name: "Full-Stack Admin Dashboard Web Application",
     description:
       "Designed a full-stack Admin Dashboard with Next.js, featuring dynamic data visualization, user management, and role-based authentication. Integrated responsive design and state management to ensure a seamless and secure user experience for administrators.",
     tags: [
@@ -262,14 +262,10 @@ const projects = [
     source_code_link: "https://github.com/SamuelIVX/car_Wash_Simulation",
   },
   {
-    name: "Machine Learning Model",
+    name: "Telecom ML Prediction Model",
     description:
       "Led a team to build and train a supervised learning model for a telecom company, aimed at predicting future outcomes and driving data-driven decision-making.",
     tags: [
-      {
-        name: "SQL",
-        color: "blue-text-gradient",
-      },
       {
         name: "Python",
         color: "green-text-gradient",
