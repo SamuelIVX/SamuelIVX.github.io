@@ -42,7 +42,7 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Software Engineer",
+    title: "Software Developer",
     icon: web,
   },
   {
@@ -140,7 +140,7 @@ const experiences = [
     ],
   },
   {
-    title: "Software Development Engineer Intern",
+    title: "Amazon Future Engineer Intern",
     company_name: "Amazon Web Services (AWS)",
     icon: amazonwebservices,
     iconBg: "#383E56",
@@ -161,6 +161,17 @@ const experiences = [
       "Developed predictive models using Python, SQL, and Jupyter Notebooks.",
       "Analyzed large datasets with a focus on data consistency, deduplication, and handling missing values for improved ML reliability.",
       "Led a 9-week team project simulating real-world client engagement, building a predictive model that increased forecasting accuracy by >25%, demonstrating practical applications of ML concepts.",
+    ],
+  },
+  {
+    title: "Software Development Engineer Intern",
+    company_name: "Amazon Web Services (AWS)",
+    icon: amazonwebservices,
+    iconBg: "#383E56",
+    date: "Jun 2025 - Aug 2025",
+    points: [
+      "Developed a comprehensive AWS bill computation analytics platform by building an automated Python-based data retrieval and query system, reducing ticket resolution time by >83%.",
+      "Engineered Model Context Protocol(MCP) Server integration that unified multiple complex disparate billing tools into a single AI - powered interface, eliminating context switching overhead by > 85 %.",
     ],
   },
 ];
