@@ -42,18 +42,16 @@ const Contact = () => {
         setLoading(false);
         alert("Thank you. I will get back to you as soon as possible.");
 
-        setForm(
-          {
-            name: "",
-            email: "",
-            message: "",
-          },
-          (error) => {
-            setLoading(false);
-            console.log(error);
-            alert("Something went wrong");
-          }
-        );
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.log(error);
+        alert("Something went wrong");
       });
   };
 
