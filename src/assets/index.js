@@ -17,7 +17,7 @@ import reactjs from "./tech/reactjs.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
-// import java from "./tech/java.webp";
+import java from "./tech/java.webp";
 import c from "./tech/c++.png";
 import aws from "./tech/aws.png";
 import mysql from "./tech/mysql.png"
@@ -29,6 +29,8 @@ import admin from "./admin.jpeg";
 import carwash from "./carwash.png";
 import ecommerce from "./ecommerce.png";
 import mL from "./mL.png";
+import deltabase from "./deltabase.png";
+import foodsense from "./foodsense.png";
 
 export {
   logo,
@@ -49,7 +51,7 @@ export {
   tailwind,
   typescript,
   threejs,
-  // java,
+  java,
   c,
   aws,
   mysql,
@@ -59,4 +61,6 @@ export {
   carwash,
   ecommerce,
   mL,
+  deltabase,
+  foodsense,
 };

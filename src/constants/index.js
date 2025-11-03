@@ -12,8 +12,7 @@ import {
   reactjs,
   tailwind,
   typescript,
-  threejs,
-  // java,
+  java,
   c,
   aws,
   mysql,
@@ -23,6 +22,8 @@ import {
   carwash,
   ecommerce,
   mL,
+  deltabase,
+  foodsense
 } from "../assets";
 
 export const navLinks = [
@@ -97,8 +98,8 @@ const technologies = [
     icon: nodejs,
   },
   {
-    name: "ThreeJs",
-    icon: threejs,
+    name: "Java",
+    icon: java,
   },
   {
     name: "git",
@@ -312,6 +313,88 @@ const projects = [
     ],
     image: mL,
     source_code_link: "https://github.com/SamuelIVX/machineLearningModel",
+  },
+  {
+    name: "DeltaBase",
+    description:
+      "A Next.js web application that helps investors make data-driven decisions by comparing stocks and cryptocurrencies with real-time data and historical analysis.",
+    tags: [
+      {
+        name: "TypeScript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "JavaScript",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "CSS",
+        color: "purple-text-gradient",
+      },
+      {
+        name: "React",
+        color: "cyan-text-gradient",
+      },
+      {
+        name: "Recharts",
+        color: "yellow-text-gradient",
+      },
+      {
+        name: "DCA Simulation",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "Data-Range Mapping",
+        color: "red-text-gradient",
+      },
+      {
+        name: "React-Context",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: deltabase,
+    source_code_link: "https://github.com/SamuelIVX/Deltabase",
+  },
+  {
+    name: "FoodSense",
+    description:
+      "FoodSense is a Java Swing desktop app for scanning grocery barcodes and instantly viewing product nutrition. It supports live barcode scanning via your webcam (JavaCV + ZXing) or manual barcode entry, where responses are parsed with Gson. Built with Maven (Java 25), using javacv-platform, zxing-javase, and gson.",
+    tags: [
+      {
+        name: "Java",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Java Swing",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Maven",
+        color: "purple-text-gradient",
+      },
+      {
+        name: "JavaCV",
+        color: "cyan-text-gradient",
+      },
+      {
+        name: "ZXing",
+        color: "yellow-text-gradient",
+      },
+      {
+        name: "Gson",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "Producer-Consumer Pipeline",
+        color: "red-text-gradient",
+      },
+      {
+        name: "Barcode-Detections Algorithm",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: foodsense,
+    source_code_link: "https://github.com/SamuelIVX/FoodSense",
   },
 ];
 
