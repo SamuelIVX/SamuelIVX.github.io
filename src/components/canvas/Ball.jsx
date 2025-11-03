@@ -1,4 +1,5 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
+import PropTypes from "prop-types";
 import { Canvas } from "@react-three/fiber";
 import {
   Decal,
@@ -9,6 +10,15 @@ import {
 } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
+// Prop validation
+Ball.propTypes = {
+  imgUrl: PropTypes.string.isRequired,
+};
+
+BallCanvas.propTypes = {
+  icon: PropTypes.string.isRequired,
+};
+
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl]);
 
@@ -16,7 +26,7 @@ const Ball = (props) => {
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
       <ambientLight intensity={0.25} />
       <directionalLight position={[0, 0, 0.05]} />
-      <mesh castShadow receiveShado scale={2.75}>
+      <mesh castShadow receiveShadow scale={2.75}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
           color="#fff8eb"
