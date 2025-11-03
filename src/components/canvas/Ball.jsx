@@ -10,15 +10,6 @@ import {
 } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
-// Prop validation
-Ball.propTypes = {
-  imgUrl: PropTypes.string.isRequired,
-};
-
-BallCanvas.propTypes = {
-  icon: PropTypes.string.isRequired,
-};
-
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl]);
 
@@ -60,6 +51,15 @@ const BallCanvas = ({ icon }) => {
       <Preload all />
     </Canvas>
   );
+};
+
+// Prop validation
+Ball.propTypes = {
+  imgUrl: PropTypes.string.isRequired,
+};
+
+BallCanvas.propTypes = {
+  icon: PropTypes.string.isRequired,
 };
 
 export default BallCanvas;
