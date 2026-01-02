@@ -1,21 +1,23 @@
-# 🚀 Personal Portfolio Website
+# Personal Portfolio Website
 
-A modern, responsive personal portfolio website built with React and Three.js, featuring 3D animations, interactive components, and a sleek design. This portfolio showcases my projects, skills, experience, and provides a way for visitors to get in touch.
+**Modern 3D Portfolio**
 
-## ✨ Features
+> A responsive personal portfolio website featuring interactive 3D graphics, smooth animations, and a sleek design to showcase projects, skills, and professional experience.
 
-- **🎨 Interactive 3D Graphics**: Three.js-powered 3D models and animations (computers, Earth, tech balls)
-- **📱 Fully Responsive**: Optimized for desktop, tablet, and mobile devices
-- **🎭 Smooth Animations**: Framer Motion animations throughout the site
-- **💼 Project Showcase**: Detailed project cards with links to GitHub repositories
-- **📊 Experience Timeline**: Vertical timeline displaying professional experience
-- **🛠️ Tech Stack Visualization**: Interactive 3D tech ball animations
-- **📧 Contact Form**: Functional contact form powered by EmailJS
-- **🌙 Dark Theme**: Modern dark theme with gradient accents
+## Features
 
-## 🛠️ Technologies Used
+- 📊 **3D Graphics** - Interactive Three.js models (computers, Earth, tech balls)
+- 📱 **Fully Responsive** - Optimized for all device sizes
+- 🎭 **Smooth Animations** - Framer Motion animations throughout
+- 💼 **Project Showcase** - Detailed project cards with GitHub links
+- 📈 **Experience Timeline** - Vertical timeline of professional experience
+- 🛠️ **Tech Stack Display** - Interactive 3D tech ball visualizations
+- 📧 **Contact Form** - Functional form powered by EmailJS
+- 🌙 **Dark Theme** - Modern dark theme with gradient accents
 
-### Core
+## Tech Stack
+
+### Frontend
 - **React 18.3** - UI library
 - **Vite** - Build tool and dev server
 - **React Router** - Client-side routing
@@ -23,8 +25,8 @@ A modern, responsive personal portfolio website built with React and Three.js, f
 ### 3D Graphics & Animations
 - **Three.js** - 3D graphics library
 - **@react-three/fiber** - React renderer for Three.js
-- **@react-three/drei** - Useful helpers for react-three-fiber
-- **Framer Motion** - Animation library for React
+- **@react-three/drei** - Helpers for react-three-fiber
+- **Framer Motion** - Animation library
 
 ### Styling
 - **Tailwind CSS** - Utility-first CSS framework
@@ -34,13 +36,32 @@ A modern, responsive personal portfolio website built with React and Three.js, f
 - **EmailJS** - Email service for contact form
 - **React Tilt** - Tilt effect on hover
 - **React Vertical Timeline** - Experience timeline component
-- **PropTypes** - Runtime type checking
 
-## 🌐 Live Demo
+## Project Structure
 
-Visit the live site: [https://SamuelIVX.github.io](https://SamuelIVX.github.io)
+```
+src/
+├── components/        # React components
+│   ├── canvas/       # Three.js canvas components
+│   │   ├── Ball.jsx      # Tech ball component
+│   │   ├── Computers.jsx # 3D computer model
+│   │   ├── Earth.jsx     # 3D Earth model
+│   │   └── Stars.jsx     # Animated stars background
+│   ├── About.jsx     # About section
+│   ├── Contact.jsx  # Contact form
+│   ├── Experience.jsx # Experience timeline
+│   ├── Hero.jsx      # Hero section
+│   ├── Navbar.jsx    # Navigation bar
+│   ├── Tech.jsx      # Tech stack display
+│   └── Works.jsx     # Projects showcase
+├── constants/        # Data and configuration
+├── hoc/             # Higher-order components
+├── styles/          # Style configurations
+├── utils/           # Utility functions
+└── assets/          # Images and static assets
+```
 
-## 👤 Author
+## Author
 
 **Samuel Hernandez Balderas**
 
