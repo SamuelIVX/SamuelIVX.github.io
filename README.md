@@ -39,7 +39,7 @@
 
 ## Project Structure
 
-```
+```bash
 src/
 ├── components/        # React components
 │   ├── canvas/       # Three.js canvas components
@@ -66,7 +66,6 @@ src/
 **Samuel Hernandez Balderas**
 
 - GitHub: [@SamuelIVX](https://github.com/SamuelIVX)
-- Email: samuel05.hb@gmail.com
 
 ---
 
