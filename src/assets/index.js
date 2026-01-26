@@ -28,7 +28,6 @@ import amazonwebservices from "./company/amazonwebservices.png";
 import admin from "./admin.jpeg";
 import carwash from "./carwash.png";
 import ecommerce from "./ecommerce.png";
-import mL from "./mL.png";
 import deltabase from "./deltabase.png";
 import foodsense from "./foodsense.png";
 
@@ -60,7 +59,6 @@ export {
   admin,
   carwash,
   ecommerce,
-  mL,
   deltabase,
   foodsense,
 };
