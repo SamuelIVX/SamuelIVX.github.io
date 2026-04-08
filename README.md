@@ -6,14 +6,14 @@
 
 ## Features
 
-- 📊 **3D Graphics** - Interactive Three.js models (computers, Earth, tech balls)
-- 📱 **Fully Responsive** - Optimized for all device sizes
-- 🎭 **Smooth Animations** - Framer Motion animations throughout
-- 💼 **Project Showcase** - Detailed project cards with GitHub links
-- 📈 **Experience Timeline** - Vertical timeline of professional experience
-- 🛠️ **Tech Stack Display** - Interactive 3D tech ball visualizations
-- 📧 **Contact Form** - Functional form powered by EmailJS
-- 🌙 **Dark Theme** - Modern dark theme with gradient accents
+- **3D Graphics** - Interactive Three.js models (computers, Earth, tech balls)
+- **Fully Responsive** - Optimized for all device sizes
+- **Smooth Animations** - Framer Motion animations throughout
+- **Project Showcase** - Detailed project cards with GitHub links
+- **Experience Timeline** - Vertical timeline of professional experience
+- **Tech Stack Display** - Interactive 3D tech ball visualizations
+- **Contact Form** - Functional form powered by EmailJS
+- **Dark Theme** - Modern dark theme with gradient accents
 
 ## Tech Stack
 
@@ -60,12 +60,6 @@ src/
 ├── utils/           # Utility functions
 └── assets/          # Images and static assets
 ```
-
-## Author
-
-**Samuel Hernandez Balderas**
-
-- GitHub: [@SamuelIVX](https://github.com/SamuelIVX)
 
 ---
 
