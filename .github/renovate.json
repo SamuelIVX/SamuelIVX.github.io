@@ -8,6 +8,7 @@
         "every weekday"
     ],
     "osvVulnerabilityAlerts": true,
+    "platformAutomerge": true,
     "prHourlyLimit": 6,
     "rangeStrategy": "auto",
     "labels": [
@@ -26,7 +27,7 @@
             ],
             "groupName": "github-actions",
             "automerge": true,
-            "automergeType": "branch"
+            "automergeType": "pr"
         },
         {
             "matchManagers": [
@@ -40,7 +41,7 @@
                 "patch"
             ],
             "automerge": true,
-            "automergeType": "branch"
+            "automergeType": "pr"
         },
         {
             "matchManagers": [
@@ -53,7 +54,7 @@
                 "patch"
             ],
             "automerge": true,
-            "automergeType": "branch"
+            "automergeType": "pr"
         },
         {
             "matchManagers": [
@@ -84,7 +85,13 @@
             ],
             "separateMajorMinor": true
         },
-        {}
+        {
+            "matchUpdateTypes": [
+                "lockFileMaintenance"
+            ],
+            "automerge": true,
+            "automergeType": "pr"
+        }
     ],
     "lockFileMaintenance": {
         "enabled": true,

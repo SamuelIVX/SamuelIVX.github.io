@@ -5,10 +5,11 @@ on:
     pull_request:
         paths:
             - ".github/renovate.json"
-            - ".github/renovate/**"
-            - "renovate.json"
-            - "renovate.json5"
-            - ".renovaterc*"
+    workflow_dispatch:
+
+concurrency:
+    group: validate-renovate-${{ github.ref }}
+    cancel-in-progress: true
 
 jobs:
     validate:
