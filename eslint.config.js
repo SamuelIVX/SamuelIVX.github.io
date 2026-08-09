@@ -35,4 +35,10 @@ export default [
       ],
     },
   },
+  {
+    files: ["src/components/canvas/**/*.{js,jsx}"],
+    rules: {
+      "react/no-unknown-property": "off",
+    },
+  },
 ];
