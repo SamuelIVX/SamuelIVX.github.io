@@ -14,7 +14,13 @@ import {
   StarsCanvas,
 } from "./components";
 
-/** Single-page portfolio shell with hash-section navigation. */
+/**
+ * Single-page portfolio shell with hash-section navigation.
+ * @returns {JSX.Element} The routed portfolio layout.
+ * @example
+ * // Mounted from main.jsx via createRoot(...).render(<App />)
+ * <App />
+ */
 const App = () => {
   return (
     <BrowserRouter>

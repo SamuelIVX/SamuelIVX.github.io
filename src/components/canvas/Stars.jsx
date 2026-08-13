@@ -10,6 +10,8 @@ import * as random from "maath/random/dist/maath-random.esm";
  * Slowly rotating sphere of points; accepts extra Points props via spread.
  * @param {object} props - Forwarded to drei Points.
  * @returns {JSX.Element} Star Points group.
+ * @example
+ * <Stars />
  */
 const Stars = (props) => {
   const ref = useRef();
@@ -35,7 +37,12 @@ const Stars = (props) => {
   );
 };
 
-/** Full-bleed absolute starfield behind Contact. */
+/**
+ * Full-bleed absolute starfield behind Contact.
+ * @returns {JSX.Element} Absolute starfield canvas wrapper.
+ * @example
+ * <StarsCanvas />
+ */
 const StarsCanvas = () => {
   return (
     <div className="w-full h-auto absolute inset-0 z-[-1]">

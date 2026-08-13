@@ -25,6 +25,8 @@ import { textVariant } from "../utils/motion";
  * @param {string} props.experience.title - Role title.
  * @param {string[]} props.experience.points - Bullet highlights.
  * @returns {JSX.Element} Timeline element for one experience.
+ * @example
+ * <ExperienceCard experience={experiences[0]} />
  */
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
@@ -76,7 +78,13 @@ ExperienceCard.propTypes = {
   }).isRequired, // experience itself is required
 };
 
-/** Work Experience heading and vertical timeline of roles. */
+/**
+ * Work Experience heading and vertical timeline of roles.
+ * @returns {JSX.Element} Experience section contents.
+ * @example
+ * // Exported as SectionWrapper(Experience, "work")
+ * <Experience />
+ */
 const Experience = () => {
   return (
     <>

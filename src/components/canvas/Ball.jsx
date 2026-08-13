@@ -19,6 +19,8 @@ import CanvasLoader from "../Loader";
  * @param {object} props - Component props.
  * @param {string} props.imgUrl - Texture URL for the decal.
  * @returns {JSX.Element} Three.js ball mesh group.
+ * @example
+ * <Ball imgUrl={reactjs} />
  */
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl]);
@@ -51,6 +53,8 @@ const Ball = (props) => {
  * @param {object} props - Component props.
  * @param {string} props.icon - Image URL passed to Ball as imgUrl.
  * @returns {JSX.Element} Canvas with OrbitControls and Ball.
+ * @example
+ * <BallCanvas icon={javascript} />
  */
 const BallCanvas = ({ icon }) => {
   return (

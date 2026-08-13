@@ -15,7 +15,13 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
-/** Contact form + globe canvas for inbound messages via EmailJS. */
+/**
+ * Contact form + globe canvas for inbound messages via EmailJS.
+ * @returns {JSX.Element} Form panel and EarthCanvas.
+ * @example
+ * // Mounted via SectionWrapper(Contact, "contact") from App
+ * <Contact />
+ */
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -29,6 +35,8 @@ const Contact = () => {
    * Syncs a named input into local form state.
    * @param {React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>} e - Change event.
    * @returns {void}
+   * @example
+   * handleChange({ target: { name: "email", value: "sam@example.com" } });
    */
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,8 +48,11 @@ const Contact = () => {
    * Submits the form through EmailJS and resets on success.
    * SECURITY: Sends visitor name/email/message to EmailJS with the public
    * client key (`vINIqsQL1x32FMzO3`); avoid logging `form` or the response.
+   * EmailJS rejections are caught and alerted — this handler does not rethrow.
    * @param {React.FormEvent<HTMLFormElement>} e - Submit event.
    * @returns {void}
+   * @example
+   * // Wired as <form onSubmit={handleSubmit}>; success clears name/email/message.
    */
   const handleSubmit = (e) => {
     e.preventDefault();

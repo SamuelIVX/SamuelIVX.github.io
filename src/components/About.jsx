@@ -17,6 +17,8 @@ import { SectionWrapper } from "../hoc";
  * @param {string} props.title - Service label.
  * @param {string} props.icon - Image URL for the service icon.
  * @returns {JSX.Element} Animated service card.
+ * @example
+ * <ServiceCard index={0} title="Web Developer" icon={web} />
  */
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -55,7 +57,13 @@ ServiceCard.propTypes = {
   icon: PropTypes.string.isRequired, // icon is required and must be a string (URL)
 };
 
-/** Overview heading, bio paragraph, and service cards. */
+/**
+ * Overview heading, bio paragraph, and service cards.
+ * @returns {JSX.Element} About section body (wrapped by SectionWrapper).
+ * @example
+ * // Exported as SectionWrapper(About, "about")
+ * <About />
+ */
 const About = () => {
   return (
     <>

@@ -6,7 +6,13 @@ import { BallCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
 
-/** Row of floating 3D tech icon balls. */
+/**
+ * Row of floating 3D tech icon balls.
+ * @returns {JSX.Element} Tech icon grid.
+ * @example
+ * // Exported as SectionWrapper(Tech, "")
+ * <Tech />
+ */
 const Tech = () => {
   return (
     <div className="flex flex-row flex-wrap justify-center gap-10">

@@ -17,6 +17,8 @@ afterEach(() => {
  * Minimal IntersectionObserver that immediately reports intersecting so
  * motion/timeline components mount without a real browser observer.
  * @param {IntersectionObserverCallback} callback - Observer callback.
+ * @example
+ * // Assigned to globalThis.IntersectionObserver for Vitest
  */
 class TestIntersectionObserver {
   constructor(callback) {

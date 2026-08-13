@@ -7,6 +7,8 @@
  * Vertical spring entrance for headings.
  * @param {number} [delay] - Seconds before the show transition starts.
  * @returns {{ hidden: object, show: object }} Motion variants for y/opacity.
+ * @example
+ * <motion.div variants={textVariant(0.2)} initial="hidden" animate="show" />
  */
 export const textVariant = (delay) => {
   return {
@@ -33,6 +35,8 @@ export const textVariant = (delay) => {
  * @param {number} delay - Seconds before the show transition starts.
  * @param {number} duration - Transition duration in seconds.
  * @returns {{ hidden: object, show: object }} Motion variants for position/opacity.
+ * @example
+ * fadeIn("right", "spring", 0.5, 0.75)
  */
 export const fadeIn = (direction, type, delay, duration) => {
   return {
@@ -60,6 +64,8 @@ export const fadeIn = (direction, type, delay, duration) => {
  * @param {number} delay - Seconds before the show transition starts.
  * @param {number} duration - Transition duration in seconds.
  * @returns {{ hidden: object, show: object }} Motion variants for scale/opacity.
+ * @example
+ * zoomIn(0.1, 0.4)
  */
 export const zoomIn = (delay, duration) => {
   return {
@@ -88,6 +94,8 @@ export const zoomIn = (delay, duration) => {
  * @param {number} delay - Seconds before the show transition starts.
  * @param {number} duration - Transition duration in seconds.
  * @returns {{ hidden: object, show: object }} Motion variants for x/y.
+ * @example
+ * slideIn("left", "tween", 0.2, 1)
  */
 export const slideIn = (direction, type, delay, duration) => {
   return {
@@ -113,6 +121,8 @@ export const slideIn = (direction, type, delay, duration) => {
  * @param {number} [staggerChildren] - Delay between each child animation.
  * @param {number} [delayChildren] - Extra delay before the first child (default 0).
  * @returns {{ hidden: object, show: object }} Container variants for SectionWrapper.
+ * @example
+ * staggerContainer(0.1, 0) // children stagger 100ms apart
  */
 export const staggerContainer = (staggerChildren, delayChildren) => {
   return {

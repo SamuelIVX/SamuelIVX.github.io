@@ -11,6 +11,8 @@ import { staggerContainer } from "../utils/motion";
  * @param {import("react").ComponentType} Component - Section to wrap.
  * @param {string} idName - DOM id for the hash-span (e.g. "about", "work").
  * @returns {function(): JSX.Element} Wrapped section component.
+ * @example
+ * export default SectionWrapper(About, "about");
  */
 const SectionWrapper = (Component, idName) =>
   function HOC() {
