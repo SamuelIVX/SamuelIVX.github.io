@@ -3,7 +3,10 @@
  */
 import { Html, useProgress } from "@react-three/drei";
 
-/** Progress percentage overlay while 3D assets load. */
+/**
+ * Progress percentage overlay while 3D assets load.
+ * @returns {JSX.Element} Html overlay with percent complete.
+ */
 const Loader = () => {
   const { progress } = useProgress();
   return (

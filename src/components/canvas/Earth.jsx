@@ -15,7 +15,10 @@ const Earth = () => {
   );
 };
 
-/** Demand-loop Canvas with autoRotate OrbitControls around Earth. */
+/**
+ * Demand-loop Canvas with autoRotate OrbitControls around Earth.
+ * @returns {JSX.Element} Earth R3F canvas.
+ */
 const EarthCanvas = () => {
   return (
     <Canvas

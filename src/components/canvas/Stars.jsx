@@ -35,7 +35,10 @@ const Stars = (props) => {
   );
 };
 
-/** Full-bleed absolute starfield behind Contact. */
+/**
+ * Full-bleed absolute starfield behind Contact.
+ * @returns {JSX.Element} Absolute starfield canvas wrapper.
+ */
 const StarsCanvas = () => {
   return (
     <div className="w-full h-auto absolute inset-0 z-[-1]">

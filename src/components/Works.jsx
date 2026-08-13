@@ -21,6 +21,15 @@ import { fadeIn, textVariant } from "../utils/motion";
  * @param {string} props.image - Screenshot/asset URL.
  * @param {string} props.source_code_link - Repository URL opened in a new tab.
  * @returns {JSX.Element} Animated project card.
+ * @example
+ * <ProjectCard
+ *   index={0}
+ *   name="Deltabase"
+ *   description="Portfolio demo."
+ *   tags={[{ name: "react", color: "blue-text-gradient" }]}
+ *   image={deltabase}
+ *   source_code_link="https://github.com/SamuelIVX/Deltabase"
+ * />
  */
 const ProjectCard = ({
   index,
@@ -90,7 +99,13 @@ ProjectCard.propTypes = {
   source_code_link: PropTypes.string.isRequired,
 };
 
-/** Projects heading, blurb, and card grid. */
+/**
+ * Projects heading, blurb, and card grid.
+ * @returns {JSX.Element} Works section contents.
+ * @example
+ * // Exported as SectionWrapper(Works, "")
+ * <Works />
+ */
 const Works = () => {
   return (
     <>

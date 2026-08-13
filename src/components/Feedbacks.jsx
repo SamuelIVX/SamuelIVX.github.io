@@ -3,7 +3,10 @@
  * possible future testimonials).
  */
 
-/** Stub testimonials section; currently unused. */
+/**
+ * Stub testimonials section; currently unused.
+ * @returns {JSX.Element} Empty placeholder section.
+ */
 const Feedbacks = () => {
   return (
     <div>Feedbacks</div>

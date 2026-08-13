@@ -69,7 +69,10 @@ const Computers = ({ isMobile }) => {
   );
 };
 
-/** Demand-loop Canvas for the hero desktop model with a fixed polar angle. */
+/**
+ * Demand-loop Canvas for the hero desktop model with a fixed polar angle.
+ * @returns {JSX.Element} Hero ComputersCanvas.
+ */
 const ComputersCanvas = () => {
   const isMobile = useSyncExternalStore(
     subscribeToMobileQuery,

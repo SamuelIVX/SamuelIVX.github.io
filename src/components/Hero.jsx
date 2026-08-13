@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
-/** Landing hero section shown under the fixed Navbar. */
+/**
+ * Landing hero section shown under the fixed Navbar.
+ * @returns {JSX.Element} Hero copy and ComputersCanvas.
+ */
 const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto">
