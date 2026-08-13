@@ -82,7 +82,8 @@ export const zoomIn = (delay, duration) => {
 
 /**
  * Full-axis slide-in used by the Contact form and Earth canvas panels.
- * @param {string} direction - "left" | "right" | "up" | "down".
+ * @param {string} direction - "left" | "right" | "up" | "down". Note: "up" and
+ *   "down" currently share the same hidden y (`"100%"`) — not mirrored.
  * @param {string} type - Framer Motion transition type.
  * @param {number} delay - Seconds before the show transition starts.
  * @param {number} duration - Transition duration in seconds.
