@@ -1,3 +1,6 @@
+/**
+ * Vite/React entry — mounts App into #root under StrictMode and loads global CSS.
+ */
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'

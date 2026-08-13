@@ -1,3 +1,7 @@
+/**
+ * Projects section — intro copy plus ProjectCard grid from `projects` constants.
+ * Wrapped with SectionWrapper (empty idName).
+ */
 import PropTypes from "prop-types";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
@@ -7,6 +11,17 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
+/**
+ * Tilted project card with screenshot, GitHub link, description, and tags.
+ * @param {object} props - Component props.
+ * @param {number} props.index - Index used to stagger fadeIn.
+ * @param {string} props.name - Project title.
+ * @param {string} props.description - Short project blurb.
+ * @param {{ name: string, color: string }[]} props.tags - Tech/tag chips.
+ * @param {string} props.image - Screenshot/asset URL.
+ * @param {string} props.source_code_link - Repository URL opened in a new tab.
+ * @returns {JSX.Element} Animated project card.
+ */
 const ProjectCard = ({
   index,
   name,
@@ -75,6 +90,7 @@ ProjectCard.propTypes = {
   source_code_link: PropTypes.string.isRequired,
 };
 
+/** Projects heading, blurb, and card grid. */
 const Works = () => {
   return (
     <>

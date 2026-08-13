@@ -1,4 +1,7 @@
-// Shared Vitest setup for DOM matchers, accessibility assertions, and browser API shims.
+/**
+ * Shared Vitest setup: jest-dom matchers, jest-axe, Testing Library cleanup,
+ * and an IntersectionObserver shim for Framer Motion / vertical timeline.
+ */
 import "@testing-library/jest-dom/vitest";
 import { cleanup } from "@testing-library/react";
 import { toHaveNoViolations } from "jest-axe";
@@ -10,6 +13,11 @@ afterEach(() => {
   cleanup();
 });
 
+/**
+ * Minimal IntersectionObserver that immediately reports intersecting so
+ * motion/timeline components mount without a real browser observer.
+ * @param {IntersectionObserverCallback} callback - Observer callback.
+ */
 class TestIntersectionObserver {
   constructor(callback) {
     this.callback = callback;

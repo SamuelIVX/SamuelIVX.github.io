@@ -1,7 +1,12 @@
+/**
+ * Tech stack grid — one BallCanvas per entry in `technologies`.
+ * Wrapped with SectionWrapper (empty idName — not a nav target).
+ */
 import { BallCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
 
+/** Row of floating 3D tech icon balls. */
 const Tech = () => {
   return (
     <div className="flex flex-row flex-wrap justify-center gap-10">

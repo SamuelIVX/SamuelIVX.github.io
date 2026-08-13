@@ -1,3 +1,7 @@
+/**
+ * Root portfolio layout: BrowserRouter wrapping the section stack
+ * (Navbar → Hero → About → Experience → Tech → Works → Contact + StarsCanvas).
+ */
 import { BrowserRouter } from "react-router-dom";
 import {
   About,
@@ -10,6 +14,7 @@ import {
   StarsCanvas,
 } from "./components";
 
+/** Single-page portfolio shell with hash-section navigation. */
 const App = () => {
   return (
     <BrowserRouter>

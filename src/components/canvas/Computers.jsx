@@ -1,3 +1,7 @@
+/**
+ * Hero desktop PC glTF canvas — scales for mobile via matchMedia and
+ * useSyncExternalStore. Loads `public/desktop_pc/scene.gltf`.
+ */
 import { Suspense, useSyncExternalStore } from "react";
 import PropTypes from "prop-types";
 import { Canvas } from "@react-three/fiber";
@@ -6,10 +10,19 @@ import CanvasLoader from "../Loader";
 
 const MOBILE_MEDIA_QUERY = "(max-width: 500px)";
 
+/**
+ * Current mobile breakpoint match (client-only).
+ * @returns {boolean} True when viewport width is ≤500px.
+ */
 const getMobileSnapshot = () =>
   typeof window !== "undefined" &&
   window.matchMedia(MOBILE_MEDIA_QUERY).matches;
 
+/**
+ * Subscribes to mobile media-query changes for useSyncExternalStore.
+ * @param {() => void} onStoreChange - Callback when the query result changes.
+ * @returns {() => void} Unsubscribe function.
+ */
 const subscribeToMobileQuery = (onStoreChange) => {
   if (typeof window === "undefined") {
     return () => {};
@@ -23,6 +36,12 @@ const subscribeToMobileQuery = (onStoreChange) => {
   };
 };
 
+/**
+ * Lit desktop PC primitive with mobile-aware scale/position.
+ * @param {object} props - Component props.
+ * @param {boolean} props.isMobile - Whether to use the compact layout.
+ * @returns {JSX.Element} Lights + glTF primitive.
+ */
 const Computers = ({ isMobile }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
 
@@ -50,6 +69,7 @@ const Computers = ({ isMobile }) => {
   );
 };
 
+/** Demand-loop Canvas for the hero desktop model with a fixed polar angle. */
 const ComputersCanvas = () => {
   const isMobile = useSyncExternalStore(
     subscribeToMobileQuery,
