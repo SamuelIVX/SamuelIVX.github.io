@@ -13,6 +13,8 @@ const MOBILE_MEDIA_QUERY = "(max-width: 500px)";
 /**
  * Current mobile breakpoint match (client-only).
  * @returns {boolean} True when viewport width is ≤500px.
+ * @example
+ * getMobileSnapshot() // true on a 390px-wide phone
  */
 const getMobileSnapshot = () =>
   typeof window !== "undefined" &&
@@ -22,6 +24,9 @@ const getMobileSnapshot = () =>
  * Subscribes to mobile media-query changes for useSyncExternalStore.
  * @param {() => void} onStoreChange - Callback when the query result changes.
  * @returns {() => void} Unsubscribe function.
+ * @example
+ * const unsubscribe = subscribeToMobileQuery(() => {});
+ * unsubscribe();
  */
 const subscribeToMobileQuery = (onStoreChange) => {
   if (typeof window === "undefined") {
@@ -41,6 +46,8 @@ const subscribeToMobileQuery = (onStoreChange) => {
  * @param {object} props - Component props.
  * @param {boolean} props.isMobile - Whether to use the compact layout.
  * @returns {JSX.Element} Lights + glTF primitive.
+ * @example
+ * <Computers isMobile={false} />
  */
 const Computers = ({ isMobile }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
@@ -72,6 +79,8 @@ const Computers = ({ isMobile }) => {
 /**
  * Demand-loop Canvas for the hero desktop model with a fixed polar angle.
  * @returns {JSX.Element} Hero ComputersCanvas.
+ * @example
+ * <ComputersCanvas />
  */
 const ComputersCanvas = () => {
   const isMobile = useSyncExternalStore(

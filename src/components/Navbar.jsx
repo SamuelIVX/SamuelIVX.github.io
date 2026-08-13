@@ -12,6 +12,8 @@ import { logo, menu, close } from "../assets";
 /**
  * Portfolio navbar with mobile hamburger drawer.
  * @returns {JSX.Element} Fixed top navigation.
+ * @example
+ * <Navbar />
  */
 const Navbar = () => {
   const [active, setActive] = useState("");

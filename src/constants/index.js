@@ -29,7 +29,11 @@ import {
   foodsense
 } from "../assets";
 
-/** Hash-nav targets rendered by Navbar (About / Work / Contact). */
+/**
+ * Hash-nav targets rendered by Navbar (About / Work / Contact).
+ * @example
+ * navLinks.map((l) => `#${l.id}`) // ['#about', '#work', '#contact']
+ */
 export const navLinks = [
   {
     id: "about",
@@ -361,4 +365,9 @@ const projects = [
   },
 ];
 
+/**
+ * Portfolio content arrays consumed by About / Tech / Experience / Works.
+ * @example
+ * import { projects } from '../constants';
+ */
 export { services, technologies, experiences, projects };

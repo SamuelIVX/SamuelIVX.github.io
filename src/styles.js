@@ -1,6 +1,9 @@
 /**
  * Shared Tailwind class-string tokens for section padding and heading styles.
  * Imported by Hero, Navbar, and wrapped section components.
+ * @example
+ * import { styles } from './styles';
+ * <h2 className={styles.sectionHeadText}>Overview.</h2>
  */
 const styles = {
   paddingX: "sm:px-16 px-6",

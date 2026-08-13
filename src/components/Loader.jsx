@@ -6,6 +6,8 @@ import { Html, useProgress } from "@react-three/drei";
 /**
  * Progress percentage overlay while 3D assets load.
  * @returns {JSX.Element} Html overlay with percent complete.
+ * @example
+ * <CanvasLoader /> // Suspense fallback in canvas hosts
  */
 const Loader = () => {
   const { progress } = useProgress();

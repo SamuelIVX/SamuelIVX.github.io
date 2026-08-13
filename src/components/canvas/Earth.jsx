@@ -7,7 +7,12 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
-/** Planet mesh from the planet glTF scene. */
+/**
+ * Planet mesh from the planet glTF scene.
+ * @returns {JSX.Element} Primitive for the Earth model.
+ * @example
+ * <Earth />
+ */
 const Earth = () => {
   const earth = useGLTF("./planet/scene.gltf");
   return (
@@ -18,6 +23,8 @@ const Earth = () => {
 /**
  * Demand-loop Canvas with autoRotate OrbitControls around Earth.
  * @returns {JSX.Element} Earth R3F canvas.
+ * @example
+ * <EarthCanvas />
  */
 const EarthCanvas = () => {
   return (

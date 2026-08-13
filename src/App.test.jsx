@@ -19,6 +19,8 @@ vi.mock("./components/canvas", () => ({
 /**
  * Renders the full App under Testing Library.
  * @returns {import("@testing-library/react").RenderResult} RTL render result.
+ * @example
+ * const { container } = renderApp();
  */
 const renderApp = () => render(<App />);
 

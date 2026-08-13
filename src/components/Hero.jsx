@@ -8,6 +8,8 @@ import { ComputersCanvas } from "./canvas";
 /**
  * Landing hero section shown under the fixed Navbar.
  * @returns {JSX.Element} Hero copy and ComputersCanvas.
+ * @example
+ * <Hero />
  */
 const Hero = () => {
   return (

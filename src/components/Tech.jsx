@@ -9,6 +9,9 @@ import { technologies } from "../constants";
 /**
  * Row of floating 3D tech icon balls.
  * @returns {JSX.Element} Tech icon grid.
+ * @example
+ * // Exported as SectionWrapper(Tech, "")
+ * <Tech />
  */
 const Tech = () => {
   return (
