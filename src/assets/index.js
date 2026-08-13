@@ -1,3 +1,7 @@
+/**
+ * Asset barrel — logo, service/tech icons, company marks, and project images
+ * imported as Vite URL modules and re-exported for constants and UI.
+ */
 import logo from "./logo.png";
 import backend from "./backend.png";
 import creator from "./creator.png";

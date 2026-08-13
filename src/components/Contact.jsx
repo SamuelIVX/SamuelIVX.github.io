@@ -1,3 +1,12 @@
+/**
+ * Contact section — EmailJS form plus EarthCanvas. Wrapped with SectionWrapper
+ * as the `#contact` anchor.
+ *
+ * SECURITY: EmailJS service ID, template ID, and public key are hardcoded and
+ * ship to the browser by design (EmailJS public-key model). They are not
+ * private secrets; rotate them in the EmailJS dashboard if abused. Form fields
+ * carry visitor PII (name/email/message) — do not log payloads.
+ */
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
@@ -6,6 +15,7 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
+/** Contact form + globe canvas for inbound messages via EmailJS. */
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -15,12 +25,24 @@ const Contact = () => {
   });
   const [loading, setLoading] = useState(false);
 
+  /**
+   * Syncs a named input into local form state.
+   * @param {React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>} e - Change event.
+   * @returns {void}
+   */
   const handleChange = (e) => {
     const { name, value } = e.target;
 
     setForm({ ...form, [name]: value });
   };
 
+  /**
+   * Submits the form through EmailJS and resets on success.
+   * SECURITY: Sends visitor name/email/message to EmailJS with the public
+   * client key (`vINIqsQL1x32FMzO3`); avoid logging `form` or the response.
+   * @param {React.FormEvent<HTMLFormElement>} e - Submit event.
+   * @returns {void}
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);

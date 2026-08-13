@@ -1,8 +1,13 @@
+/**
+ * Auto-rotating Earth glTF canvas for the Contact section.
+ * Loads `public/planet/scene.gltf`.
+ */
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
+/** Planet mesh from the planet glTF scene. */
 const Earth = () => {
   const earth = useGLTF("./planet/scene.gltf");
   return (
@@ -10,6 +15,7 @@ const Earth = () => {
   );
 };
 
+/** Demand-loop Canvas with autoRotate OrbitControls around Earth. */
 const EarthCanvas = () => {
   return (
     <Canvas

@@ -1,3 +1,13 @@
+/**
+ * Framer Motion variant factories used by section components and SectionWrapper.
+ * Pure helpers — no side effects.
+ */
+
+/**
+ * Vertical spring entrance for headings.
+ * @param {number} [delay] - Seconds before the show transition starts.
+ * @returns {{ hidden: object, show: object }} Motion variants for y/opacity.
+ */
 export const textVariant = (delay) => {
   return {
     hidden: {
@@ -16,6 +26,14 @@ export const textVariant = (delay) => {
   };
 };
 
+/**
+ * Directional fade-in for cards and body copy.
+ * @param {string} direction - "left" | "right" | "up" | "down" | "".
+ * @param {string} type - Framer Motion transition type (e.g. "spring", "tween").
+ * @param {number} delay - Seconds before the show transition starts.
+ * @param {number} duration - Transition duration in seconds.
+ * @returns {{ hidden: object, show: object }} Motion variants for position/opacity.
+ */
 export const fadeIn = (direction, type, delay, duration) => {
   return {
     hidden: {
@@ -37,6 +55,12 @@ export const fadeIn = (direction, type, delay, duration) => {
   };
 };
 
+/**
+ * Scale-up fade for zoom entrances.
+ * @param {number} delay - Seconds before the show transition starts.
+ * @param {number} duration - Transition duration in seconds.
+ * @returns {{ hidden: object, show: object }} Motion variants for scale/opacity.
+ */
 export const zoomIn = (delay, duration) => {
   return {
     hidden: {
@@ -56,6 +80,14 @@ export const zoomIn = (delay, duration) => {
   };
 };
 
+/**
+ * Full-axis slide-in used by the Contact form and Earth canvas panels.
+ * @param {string} direction - "left" | "right" | "up" | "down".
+ * @param {string} type - Framer Motion transition type.
+ * @param {number} delay - Seconds before the show transition starts.
+ * @param {number} duration - Transition duration in seconds.
+ * @returns {{ hidden: object, show: object }} Motion variants for x/y.
+ */
 export const slideIn = (direction, type, delay, duration) => {
   return {
     hidden: {
@@ -75,6 +107,12 @@ export const slideIn = (direction, type, delay, duration) => {
   };
 };
 
+/**
+ * Parent stagger container so children animate in sequence when in view.
+ * @param {number} [staggerChildren] - Delay between each child animation.
+ * @param {number} [delayChildren] - Extra delay before the first child (default 0).
+ * @returns {{ hidden: object, show: object }} Container variants for SectionWrapper.
+ */
 export const staggerContainer = (staggerChildren, delayChildren) => {
   return {
     hidden: {},

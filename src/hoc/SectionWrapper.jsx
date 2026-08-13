@@ -1,7 +1,17 @@
+/**
+ * HOC that wraps a section component in a staggered motion.section with
+ * padding, max-width, and an optional hash-span id for nav anchors.
+ */
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { staggerContainer } from "../utils/motion";
 
+/**
+ * Returns a higher-order component that animates `Component` into view once.
+ * @param {import("react").ComponentType} Component - Section to wrap.
+ * @param {string} idName - DOM id for the hash-span (e.g. "about", "work").
+ * @returns {function(): JSX.Element} Wrapped section component.
+ */
 const SectionWrapper = (Component, idName) =>
   function HOC() {
     return (

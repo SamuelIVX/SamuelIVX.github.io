@@ -1,3 +1,6 @@
+/**
+ * Barrel re-exports for portfolio sections and canvas components.
+ */
 import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas } from './canvas';
 import Hero from './Hero';
 import Navbar from './Navbar';

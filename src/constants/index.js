@@ -1,3 +1,7 @@
+/**
+ * Portfolio content data — nav links, services, technologies, experiences,
+ * and projects. Edit here rather than hardcoding in JSX section components.
+ */
 import {
   backend,
   creator,
@@ -25,6 +29,7 @@ import {
   foodsense
 } from "../assets";
 
+/** Hash-nav targets rendered by Navbar (About / Work / Contact). */
 export const navLinks = [
   {
     id: "about",

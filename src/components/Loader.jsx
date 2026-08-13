@@ -1,5 +1,9 @@
+/**
+ * Canvas loading overlay — shows useProgress percent via drei Html.
+ */
 import { Html, useProgress } from "@react-three/drei";
 
+/** Progress percentage overlay while 3D assets load. */
 const Loader = () => {
   const { progress } = useProgress();
   return (

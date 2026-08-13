@@ -1,3 +1,7 @@
+/**
+ * About / Overview section — intro copy plus tilted ServiceCard grid from
+ * `services` constants. Exported as SectionWrapper(About, "about").
+ */
 import PropTypes from "prop-types";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
@@ -6,6 +10,14 @@ import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 
+/**
+ * Tilted service tile with icon and title.
+ * @param {object} props - Component props.
+ * @param {number} props.index - Index used to stagger the fadeIn delay.
+ * @param {string} props.title - Service label.
+ * @param {string} props.icon - Image URL for the service icon.
+ * @returns {JSX.Element} Animated service card.
+ */
 const ServiceCard = ({ index, title, icon }) => {
   return (
     <Tilt
@@ -43,6 +55,7 @@ ServiceCard.propTypes = {
   icon: PropTypes.string.isRequired, // icon is required and must be a string (URL)
 };
 
+/** Overview heading, bio paragraph, and service cards. */
 const About = () => {
   return (
     <>

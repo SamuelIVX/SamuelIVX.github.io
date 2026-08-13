@@ -1,7 +1,11 @@
+/**
+ * Full-viewport hero with intro copy, ComputersCanvas, and a scroll cue to #about.
+ */
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
+/** Landing hero section shown under the fixed Navbar. */
 const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto">

@@ -1,3 +1,7 @@
+/**
+ * Work Experience timeline — VerticalTimeline over `experiences` constants.
+ * Exported as SectionWrapper(Experience, "work").
+ */
 import PropTypes from "prop-types";
 import {
   VerticalTimeline,
@@ -10,6 +14,18 @@ import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
+/**
+ * Single timeline entry for one role.
+ * @param {object} props - Component props.
+ * @param {object} props.experience - Role record from constants.
+ * @param {string} props.experience.date - Date range label.
+ * @param {string} props.experience.icon - Company icon URL.
+ * @param {string} props.experience.iconBg - Icon circle background color.
+ * @param {string} props.experience.company_name - Employer name.
+ * @param {string} props.experience.title - Role title.
+ * @param {string[]} props.experience.points - Bullet highlights.
+ * @returns {JSX.Element} Timeline element for one experience.
+ */
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
     contentStyle={{ background: "#1d1836", color: "#fff" }}
@@ -60,6 +76,7 @@ ExperienceCard.propTypes = {
   }).isRequired, // experience itself is required
 };
 
+/** Work Experience heading and vertical timeline of roles. */
 const Experience = () => {
   return (
     <>

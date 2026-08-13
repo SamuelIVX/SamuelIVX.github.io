@@ -1,4 +1,8 @@
-// Smoke tests for the portfolio app's primary sections, navigation, form state, and accessibility.
+/**
+ * Smoke tests for primary portfolio sections, nav anchors, contact form field
+ * state, and an initial axe accessibility scan. Canvas modules are mocked to
+ * avoid WebGL under jsdom.
+ */
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
@@ -12,6 +16,10 @@ vi.mock("./components/canvas", () => ({
   StarsCanvas: () => <div data-testid="stars-canvas" />,
 }));
 
+/**
+ * Renders the full App under Testing Library.
+ * @returns {import("@testing-library/react").RenderResult} RTL render result.
+ */
 const renderApp = () => render(<App />);
 
 describe("App", () => {

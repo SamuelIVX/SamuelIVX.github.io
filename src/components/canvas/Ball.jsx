@@ -1,3 +1,7 @@
+/**
+ * Floating icosahedron Ball with a tech-icon decal, plus BallCanvas host.
+ * Used by the Tech section for each technology icon.
+ */
 import { Suspense } from "react";
 import PropTypes from "prop-types";
 import { Canvas } from "@react-three/fiber";
@@ -10,6 +14,12 @@ import {
 } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
+/**
+ * Lit floating mesh with the given texture as a decal.
+ * @param {object} props - Component props.
+ * @param {string} props.imgUrl - Texture URL for the decal.
+ * @returns {JSX.Element} Three.js ball mesh group.
+ */
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl]);
 
@@ -36,6 +46,12 @@ const Ball = (props) => {
   );
 };
 
+/**
+ * R3F Canvas hosting a single tech Ball.
+ * @param {object} props - Component props.
+ * @param {string} props.icon - Image URL passed to Ball as imgUrl.
+ * @returns {JSX.Element} Canvas with OrbitControls and Ball.
+ */
 const BallCanvas = ({ icon }) => {
   return (
     <Canvas
