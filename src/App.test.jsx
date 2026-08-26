@@ -7,14 +7,21 @@ import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { describe, expect, it, vi } from "vitest";
+import PropTypes from "prop-types";
 import App from "./App";
 
-vi.mock("./components/canvas", () => ({
-  BallCanvas: () => <div data-testid="ball-canvas" />,
-  ComputersCanvas: () => <div data-testid="computers-canvas" />,
-  EarthCanvas: () => <div data-testid="earth-canvas" />,
-  StarsCanvas: () => <div data-testid="stars-canvas" />,
-}));
+vi.mock("./components/canvas", () => {
+  const VantaNetMock = ({ children }) => <div data-testid="vanta-net">{children}</div>;
+  VantaNetMock.propTypes = { children: PropTypes.node };
+
+  return {
+    BallCanvas: () => <div data-testid="ball-canvas" />,
+    ComputersCanvas: () => <div data-testid="computers-canvas" />,
+    EarthCanvas: () => <div data-testid="earth-canvas" />,
+    StarsCanvas: () => <div data-testid="stars-canvas" />,
+    VantaNet: VantaNetMock,
+  };
+});
 
 /**
  * Renders the full App under Testing Library.
