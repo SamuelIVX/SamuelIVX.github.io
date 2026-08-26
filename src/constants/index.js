@@ -20,6 +20,13 @@ import {
   c,
   aws,
   mysql,
+  nextjs,
+  supabase,
+  postgresql,
+  vercel,
+  maven,
+  motion,
+  threejs,
   AOT,
   amazonwebservices,
   carwash,
@@ -89,12 +96,8 @@ const technologies = [
     icon: reactjs,
   },
   {
-    name: "Python",
-    icon: python,
-  },
-  {
-    name: "C++",
-    icon: c,
+    name: "Next.js",
+    icon: nextjs,
   },
   {
     name: "Tailwind CSS",
@@ -107,6 +110,38 @@ const technologies = [
   {
     name: "Java",
     icon: java,
+  },
+  {
+    name: "C++",
+    icon: c,
+  },
+  {
+    name: "Python",
+    icon: python,
+  },
+  {
+    name: "Three.js",
+    icon: threejs,
+  },
+  {
+    name: "Motion",
+    icon: motion,
+  },
+  {
+    name: "Supabase",
+    icon: supabase,
+  },
+  {
+    name: "PostgreSQL",
+    icon: postgresql,
+  },
+  {
+    name: "Vercel",
+    icon: vercel,
+  },
+  {
+    name: "Maven",
+    icon: maven,
   },
   {
     name: "git",

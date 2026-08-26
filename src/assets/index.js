@@ -24,12 +24,18 @@ import threejs from "./tech/threejs.svg";
 import java from "./tech/java.webp";
 import c from "./tech/c++.png";
 import aws from "./tech/aws.png";
-import mysql from "./tech/mysql.png"
+import mysql from "./tech/mysql.png";
+
+import nextjs from "./tech/nextjs.svg";
+import supabase from "./tech/supabase.svg";
+import postgresql from "./tech/postgresql.svg";
+import vercel from "./tech/vercel.svg";
+import maven from "./tech/maven.svg";
+import motion from "./tech/motion.svg";
 
 import AOT from "./company/aot.jpeg";
 import amazonwebservices from "./company/amazonwebservices.png";
 
-import admin from "./admin.jpeg";
 import carwash from "./carwash.png";
 import ecommerce from "./ecommerce.png";
 import deltabase from "./deltabase.png";
@@ -58,9 +64,14 @@ export {
   c,
   aws,
   mysql,
+  nextjs,
+  supabase,
+  postgresql,
+  vercel,
+  maven,
+  motion,
   AOT,
   amazonwebservices,
-  admin,
   carwash,
   ecommerce,
   deltabase,
