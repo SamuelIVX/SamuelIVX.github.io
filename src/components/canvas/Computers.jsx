@@ -54,18 +54,18 @@ const Computers = ({ isMobile }) => {
 
   return (
     <>
-      <ambientLight intensity={0.5} />
-      <hemisphereLight intensity={0.5} groundColor="black" />
+      <ambientLight intensity={0.8} />
+      <hemisphereLight intensity={0.8} groundColor="black" />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
         penumbra={1}
-        intensity={1}
+        intensity={1.5}
         castShadow
-        shadow-mapSize={1024}
+        shadow-mapSize={2048}
       />
-      <pointLight position={[10, 10, 10]} intensity={1} />
-      <directionalLight position={[5, 5, 5]} intensity={0.5} />
+      <pointLight position={[10, 10, 10]} intensity={1.5} />
+      <directionalLight position={[5, 5, 5]} intensity={1} />
       <primitive
         object={computer.scene}
         scale={isMobile ? 0.7 : 0.75}
