@@ -28,6 +28,10 @@
     color-scheme: dark;
   }
 
+  html, body {
+    overflow-x: hidden;
+  }
+
   .skip-to-content {
     position: absolute;
     top: -40px;
