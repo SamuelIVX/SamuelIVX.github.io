@@ -40,6 +40,7 @@ const ExperienceCard = ({ experience, index, isOpen, toggle }) => {
       role="button"
       tabIndex={0}
       aria-expanded={isOpen}
+      aria-controls={`experience-content-${index}`}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
@@ -81,6 +82,7 @@ const ExperienceCard = ({ experience, index, isOpen, toggle }) => {
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.ul
+            id={`experience-content-${index}`}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
