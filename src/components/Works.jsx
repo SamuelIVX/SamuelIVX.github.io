@@ -59,6 +59,15 @@ const ProjectCard = ({
             <div
               onClick={() => window.open(source_code_link, "_blank")}
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+              aria-label="View source code on GitHub"
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  window.open(source_code_link, "_blank");
+                }
+              }}
             >
               <img
                 src={github}

@@ -27,6 +27,22 @@
     scroll-behavior: smooth;
     color-scheme: dark;
   }
+
+  .skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #BB6BD9;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 100;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .skip-to-content:focus {
+    top: 0;
+  }
 }
 
 .hash-span {

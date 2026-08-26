@@ -29,9 +29,11 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
-    >
+    <>
+      <a href="#main-content" className="skip-to-content">Skip to content</a>
+      <nav
+        className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
+      >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <a
           href="/"
@@ -87,8 +89,12 @@ const Navbar = () => {
             alt="menu"
             className="w-[28px] h-[28px] object-contain cursor-pointer"
             onClick={() => setToggle(!toggle)}
+            aria-label="Toggle menu"
+            aria-expanded={toggle}
+            aria-controls="mobile-menu"
           />
           <div
+            id="mobile-menu"
             className={`${
               !toggle ? "hidden" : "flex "
             } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w[140px] z-10 rounded-xl`}
@@ -141,6 +147,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+    </>
   );
 };
 
