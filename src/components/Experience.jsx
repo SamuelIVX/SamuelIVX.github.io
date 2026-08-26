@@ -1,91 +1,137 @@
 /**
- * Work Experience timeline — VerticalTimeline over `experiences` constants.
+ * Work Experience accordion — expandable role cards from `experiences` constants.
  * Exported as SectionWrapper(Experience, "work").
  */
+import { useState } from "react";
 import PropTypes from "prop-types";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import { motion } from "framer-motion";
-import "react-vertical-timeline-component/style.min.css";
+import { motion, AnimatePresence } from "motion/react";
 import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
 /**
- * Single timeline entry for one role.
+ * Expandable experience card with chevron toggle.
  * @param {object} props - Component props.
  * @param {object} props.experience - Role record from constants.
- * @param {string} props.experience.date - Date range label.
- * @param {string} props.experience.icon - Company icon URL.
- * @param {string} props.experience.iconBg - Icon circle background color.
- * @param {string} props.experience.company_name - Employer name.
- * @param {string} props.experience.title - Role title.
- * @param {string[]} props.experience.points - Bullet highlights.
- * @returns {JSX.Element} Timeline element for one experience.
+ * @param {number} props.index - Position in the list, used for staggered animation.
+ * @param {boolean} props.isOpen - Whether this card is expanded.
+ * @param {function} props.toggle - Callback to toggle this card.
+ * @returns {JSX.Element} Expandable experience card.
  * @example
- * <ExperienceCard experience={experiences[0]} />
+ * <ExperienceCard index={0} experience={experiences[0]} isOpen={false} toggle={() => {}} />
  */
-const ExperienceCard = ({ experience }) => (
-  <VerticalTimelineElement
-    contentStyle={{ background: "#1d1836", color: "#fff" }}
-    contentArrowStyle={{ borderRight: "7px solid #232631" }}
-    date={experience.date}
-    iconStyle={{ background: experience.iconBg }}
-    icon={
-      <div className="flex justify-center items-center w-full h-full border-radius: 0">
-        <img
-          src={experience.icon}
-          alt={experience.company_name}
-          className="w-[100%] h-[100%] object-contain rounded-full"
-        />
-      </div>
-    }
-  >
-    <div>
-      <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
-      <p
-        className="text-secondary text-[16px] font-semibold"
-        style={{ margin: 0 }}
-      >
-        {experience.company_name}
-      </p>
-    </div>
-    <ul className="mt-5 list-disc ml-5 space-y-2">
-      {experience.points.map((point, index) => (
-        <li
-          key={`experience-point-${index}`}
-          className="text-white-100 text-[14px] p1-1 tracking-wider"
+const ExperienceCard = ({ experience, index, isOpen, toggle }) => {
+  return (
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { delay: index * 0.1, duration: 0.5 },
+        },
+      }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      className="w-full bg-tertiary rounded-2xl p-5 mb-4 cursor-pointer"
+      onClick={toggle}
+      role="button"
+      tabIndex={0}
+      aria-expanded={isOpen}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggle();
+        }
+      }}
+    >
+      <div className="flex justify-between items-center">
+        <div className="flex-1">
+          <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
+          <p className="text-secondary text-[16px] font-semibold mt-1">
+            {experience.company_name}
+          </p>
+          <p className="text-secondary text-[14px] mt-1">{experience.date}</p>
+        </div>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+          className="ml-4"
         >
-          {point}
-        </li>
-      ))}
-    </ul>
-  </VerticalTimelineElement>
-);
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="text-white"
+          >
+            <path
+              d="M6 9L12 15L18 9"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </motion.div>
+      </div>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.ul
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="mt-4 list-disc ml-5 space-y-2 overflow-hidden"
+          >
+            {experience.points.map((point, idx) => (
+              <li
+                key={`experience-point-${idx}`}
+                className="text-white-100 text-[14px] p1-1 tracking-wider"
+              >
+                {point}
+              </li>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+};
 
 // Prop validation
 ExperienceCard.propTypes = {
   experience: PropTypes.shape({
-    date: PropTypes.string.isRequired, // date is required and must be a string
-    icon: PropTypes.string.isRequired, // icon is required and must be a string (URL)
-    iconBg: PropTypes.string.isRequired, // iconBg is required and must be a string (color)
-    company_name: PropTypes.string.isRequired, // company_name is required and must be a string
-    title: PropTypes.string.isRequired, // title is required and must be a string
-    points: PropTypes.arrayOf(PropTypes.string).isRequired, // points is required and must be an array of strings
-  }).isRequired, // experience itself is required
+    date: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    iconBg: PropTypes.string.isRequired,
+    company_name: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    points: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  toggle: PropTypes.func.isRequired,
 };
 
 /**
- * Work Experience heading and vertical timeline of roles.
+ * Work Experience heading and accordion of roles.
+ * Only one card is open at a time.
  * @returns {JSX.Element} Experience section contents.
  * @example
  * // Exported as SectionWrapper(Experience, "work")
  * <Experience />
  */
 const Experience = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggle = (index) => {
+    setOpenIndex((prev) => (prev === index ? null : index));
+  };
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -93,11 +139,15 @@ const Experience = () => {
         <h2 className={styles.sectionHeadText}>Work Experience.</h2>
       </motion.div>
       <div className="mt-20 flex flex-col">
-        <VerticalTimeline>
-          {experiences.map((experience, index) => (
-            <ExperienceCard key={index} experience={experience} />
-          ))}
-        </VerticalTimeline>
+        {experiences.map((experience, index) => (
+          <ExperienceCard
+            key={index}
+            experience={experience}
+            index={index}
+            isOpen={openIndex === index}
+            toggle={() => toggle(index)}
+          />
+        ))}
       </div>
     </>
   );
