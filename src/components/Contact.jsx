@@ -69,7 +69,7 @@ const Contact = () => {
           to_email: "samuel0.hb@gmail.com",
           message: form.message,
         },
-        "vINIqsQL1x32FMzO3"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
         setLoading(false);
