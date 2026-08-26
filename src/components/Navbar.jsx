@@ -3,7 +3,6 @@
  * `navLinks`. Tracks the active section title in local state.
  */
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -34,8 +33,8 @@ const Navbar = () => {
       className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-        <Link
-          to="/"
+        <a
+          href="/"
           className="flex items-center gap-2"
           onClick={() => {
             setActive("");
@@ -47,7 +46,7 @@ const Navbar = () => {
             Samuel &nbsp;
             <span className="sm:block hidden">| Hernandez Balderas</span>
           </p>
-        </Link>
+        </a>
         <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li
