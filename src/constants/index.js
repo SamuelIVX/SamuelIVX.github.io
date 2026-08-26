@@ -22,7 +22,6 @@ import {
   mysql,
   AOT,
   amazonwebservices,
-  admin,
   carwash,
   ecommerce,
   deltabase,
@@ -118,7 +117,7 @@ const technologies = [
     icon: aws,
   },
   {
-    name: 'MySql',
+    name: "MySql",
     icon: mysql,
   },
 ];
@@ -185,7 +184,81 @@ const experiences = [
   },
 ];
 
+const placeholderImage =
+  "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMmEyYTJlIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjQjI2QkQ5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UHJvamVjdCBQSFg8L3RleHQ+PC9zdmc+";
+
 const projects = [
+  {
+    name: "Interleave",
+    description:
+      "Java 26 explicit-state model checker implementing POR-to-DPOR optimizations for efficient concurrency bug detection in multithreaded programs.",
+    tags: [
+      {
+        name: "Java 26",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Model Checking",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Concurrency",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: placeholderImage,
+    source_code_link: "https://github.com/SamuelIVX/interleave",
+  },
+  {
+    name: "PayCore",
+    description:
+      "Next.js 16 payroll calculation engine with Supabase backend, featuring row-level security and role-based routing for secure, scalable payroll processing.",
+    tags: [
+      {
+        name: "Next.js 16",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Supabase",
+        color: "green-text-gradient",
+      },
+      {
+        name: "PostgreSQL",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "RLS",
+        color: "purple-text-gradient",
+      },
+    ],
+    image: placeholderImage,
+    source_code_link: "https://github.com/SamuelIVX/paycore",
+  },
+  {
+    name: "Clarify",
+    description:
+      "Next.js 16 study tool that converts PDFs into interactive flashcards and summaries using Claude, enabling faster and more effective learning workflows.",
+    tags: [
+      {
+        name: "Next.js 16",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Claude API",
+        color: "green-text-gradient",
+      },
+      {
+        name: "PDF Processing",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Education",
+        color: "yellow-text-gradient",
+      },
+    ],
+    image: placeholderImage,
+    source_code_link: "https://github.com/SamuelIVX/clarify",
+  },
   {
     name: "Full-Stack E-Commerce Web Application",
     description:
@@ -214,35 +287,6 @@ const projects = [
     ],
     image: ecommerce,
     source_code_link: "https://github.com/SamuelIVX/ecommerceWebsite",
-  },
-  {
-    name: "Full-Stack Admin Dashboard Web Application",
-    description:
-      "Designed a full-stack Admin Dashboard with Next.js, featuring dynamic data visualization, user management, and role-based authentication. Integrated responsive design and state management to ensure a seamless and secure user experience for administrators.",
-    tags: [
-      {
-        name: "Next.js",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "MongoDB",
-        color: "green-text-gradient",
-      },
-      {
-        name: "TailwindCSS",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "JavaScript",
-        color: "yellow-text-gradient",
-      },
-      {
-        name: "User Authentication",
-        color: "orange-text-gradient",
-      },
-    ],
-    image: admin,
-    source_code_link: "https://github.com/SamuelIVX/AdminDashboard",
   },
   {
     name: "Car Wash Simulation",
