@@ -5,11 +5,11 @@ import { technologies } from "../constants";
 
 const Tech = () => {
   return (
-    <div className="grid grid-cols-6 gap-2 mt-10 justify-items-center" style={{ overflow: "visible" }}>
+    <div className="grid grid-cols-6 gap-1.5 mt-10" style={{ overflow: "visible" }}>
       {technologies.map((tech) => (
         <div
           key={tech.name}
-          className="flex items-center gap-2 bg-tertiary px-3 py-1.5 rounded-full border border-white/5 transition-all duration-300 hover:border-purple-400/50 hover:shadow-md hover:shadow-purple-500/20 hover:bg-[#1a1245]"
+          className="flex items-center gap-1.5 bg-tertiary px-2.5 py-1 rounded-full border border-white/5 transition-all duration-300 hover:border-purple-400/50 hover:shadow-md hover:shadow-purple-500/20 hover:bg-[#1a1245]"
         >
           <img
             src={tech.icon}
