@@ -16,7 +16,10 @@ import { technologies } from "../constants";
 const Tech = () => {
   return (
     <div className="flex flex-row flex-wrap justify-center gap-10">
-      <TechBallsCanvas icons={technologies.map((t) => t.icon)} />
+      <TechBallsCanvas
+        icons={technologies.map((t) => t.icon)}
+        names={technologies.map((t) => t.name)}
+      />
     </div>
   );
 };

@@ -15,7 +15,6 @@ vi.mock("./components/canvas", () => {
   GradientBackgroundMock.propTypes = { children: PropTypes.node };
 
   return {
-    BallCanvas: () => <div data-testid="ball-canvas" />,
     ComputersCanvas: () => <div data-testid="computers-canvas" />,
     EarthCanvas: () => <div data-testid="earth-canvas" />,
     StarsCanvas: () => <div data-testid="stars-canvas" />,

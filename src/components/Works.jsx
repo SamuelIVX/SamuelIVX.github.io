@@ -48,6 +48,7 @@ const ProjectCard = ({
           speed: 450,
         }}
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full border border-white/10"
+        style={{ boxShadow: "0px 35px 120px -15px #211e35" }}
       >
         <div className="relative w-full h-[230px]">
           <img

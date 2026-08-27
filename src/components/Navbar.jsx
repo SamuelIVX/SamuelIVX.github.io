@@ -1,8 +1,9 @@
 /**
  * Fixed top navigation — brand link plus desktop/mobile hash links from
- * `navLinks`. Tracks the active section title in local state.
+ * `navLinks`. Uses IntersectionObserver to highlight the active section
+ * as the user scrolls. Click handlers provide instant feedback.
  */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -20,6 +21,7 @@ const LinkedInIcon = () => (
 
 /**
  * Portfolio navbar with mobile hamburger drawer.
+ * IntersectionObserver tracks scroll position to highlight the active section.
  * @returns {JSX.Element} Fixed top navigation.
  * @example
  * <Navbar />
@@ -27,6 +29,28 @@ const LinkedInIcon = () => (
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            const link = navLinks.find((l) => l.id === id);
+            if (link) setActive(link.title);
+          }
+        });
+      },
+      { threshold: 0.3, rootMargin: "-80px 0px 0px 0px" }
+    );
+
+    navLinks.forEach((link) => {
+      const el = document.getElementById(link.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
@@ -45,8 +69,7 @@ const Navbar = () => {
         >
           <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex">
-            Samuel &nbsp;
-            <span className="sm:block hidden">| Hernandez Balderas</span>
+            Samuel Hernandez Balderas
           </p>
         </a>
         <ul className="list-none hidden sm:flex flex-row gap-10">
@@ -133,7 +156,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com/in/your-profile"
+                  href="https://www.linkedin.com/in/samuelhb/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-secondary hover:text-white"

@@ -35,7 +35,8 @@ const ExperienceCard = ({ experience, index, isOpen, toggle }) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className="w-full bg-tertiary rounded-2xl p-5 mb-4 cursor-pointer"
+      className="w-full bg-tertiary rounded-2xl p-5 mb-4 cursor-pointer border-l-4 hover:shadow-lg hover:shadow-purple-500/10 transition-shadow"
+      style={{ borderLeftColor: experience.iconBg }}
       onClick={toggle}
       role="button"
       tabIndex={0}
@@ -49,12 +50,20 @@ const ExperienceCard = ({ experience, index, isOpen, toggle }) => {
       }}
     >
       <div className="flex justify-between items-center">
-        <div className="flex-1">
-          <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
-          <p className="text-secondary text-[16px] font-semibold mt-1">
-            {experience.company_name}
-          </p>
-          <p className="text-secondary text-[14px] mt-1">{experience.date}</p>
+        <div className="flex items-center gap-3 flex-1">
+          <img
+            src={experience.icon}
+            alt={experience.company_name}
+            className="w-10 h-10 rounded-lg object-cover shrink-0"
+            style={{ backgroundColor: experience.iconBg }}
+          />
+          <div>
+            <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
+            <p className="text-secondary text-[16px] font-semibold mt-1">
+              {experience.company_name}
+            </p>
+            <p className="text-secondary text-[14px] mt-1">{experience.date}</p>
+          </div>
         </div>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
