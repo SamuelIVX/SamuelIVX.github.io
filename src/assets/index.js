@@ -23,7 +23,7 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import java from "./tech/java.webp";
 import c from "./tech/c++.png";
-import aws from "./tech/aws.png";
+import aws from "./tech/aws.jpeg";
 import mysql from "./tech/mysql.png";
 
 import nextjs from "./tech/nextjs.svg";
