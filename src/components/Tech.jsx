@@ -2,7 +2,7 @@
  * Tech stack grid — one BallCanvas per entry in `technologies`.
  * Wrapped with SectionWrapper (empty idName — not a nav target).
  */
-import { BallCanvas } from "./canvas";
+import { TechBallsCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
 
@@ -16,11 +16,7 @@ import { technologies } from "../constants";
 const Tech = () => {
   return (
     <div className="flex flex-row flex-wrap justify-center gap-10">
-      {technologies.map((technology) => (
-        <div className="w-28 h-28" key={technology.name}>
-          <BallCanvas icon={technology.icon} />
-        </div>
-      ))}
+      <TechBallsCanvas icons={technologies.map((t) => t.icon)} />
     </div>
   );
 };
