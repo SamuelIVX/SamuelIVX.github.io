@@ -11,6 +11,9 @@ import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
+import paycore from "./paycore.png";
+import clarify from "./clarify.png";
+
 import css from "./tech/css.png";
 import python from "./tech/python.svg";
 import git from "./tech/git.png";
@@ -50,6 +53,8 @@ export {
   github,
   menu,
   close,
+  paycore,
+  clarify,
   css,
   python,
   git,

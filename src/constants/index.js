@@ -32,7 +32,9 @@ import {
   carwash,
   ecommerce,
   deltabase,
-  foodsense
+  foodsense,
+  paycore,
+  clarify
 } from "../assets";
 
 /**
@@ -290,7 +292,7 @@ const projects = [
         color: "yellow-text-gradient",
       },
     ],
-    image: placeholderImage,
+    image: paycore,
     source_code_link: "https://github.com/SamuelIVX/paycore",
   },
   {
@@ -323,7 +325,7 @@ const projects = [
         color: "cyan-text-gradient",
       },
     ],
-    image: placeholderImage,
+    image: clarify,
     source_code_link: "https://github.com/SamuelIVX/clarify",
   },
   {
