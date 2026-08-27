@@ -238,7 +238,7 @@ const projects = [
   {
     name: "Interleave",
     description:
-      "Java 26 explicit-state model checker implementing POR-to-DPOR optimizations for efficient concurrency bug detection in multithreaded programs.",
+      "Explicit-state model checker for multithreaded programs. Implements POR-to-DPOR optimizations to efficiently detect concurrency bugs in Java.",
     tags: [
       {
         name: "Java",
@@ -329,7 +329,7 @@ const projects = [
   {
     name: "Full-Stack E-Commerce Web Application",
     description:
-      "Developed a full-stack, responsive e-commerce web application using Next.js and a headless CMS (Wix JavaScript SDK) to showcase advanced product filtering, category management, and cart functionalities. Leveraged modern frameworks, state management with Zustand, and server-side rendering for optimal performance and scalability.",
+      "Full-stack e-commerce platform with product filtering, category management, and cart functionality. Built with Next.js, TailwindCSS, Zustand state management, and server-side rendering.",
     tags: [
       {
         name: "Next.js",
@@ -358,7 +358,7 @@ const projects = [
   {
     name: "Car Wash Simulation",
     description:
-      "Final project for my Data Structures & Algorithms course that simulates a Car Wash utilizing a Queue based on Linked-Nodes and OOP applications.",
+      "Discrete-event simulation of a car wash queue system. Implements linked-node queue data structures with object-oriented design to model real-time service flow.",
     tags: [
       {
         name: "C++",
@@ -424,7 +424,7 @@ const projects = [
   {
     name: "FoodSense",
     description:
-      "FoodSense is a Java Swing desktop app for scanning grocery barcodes and instantly viewing product nutrition. It supports live barcode scanning via your webcam (JavaCV + ZXing) or manual barcode entry, where responses are parsed with Gson. Built with Maven (Java 25), using javacv-platform, zxing-javase, and gson.",
+      "Desktop nutrition lookup tool that scans grocery barcodes via webcam or manual entry. Uses JavaCV and ZXing for real-time barcode detection, with Gson-parsed product data.",
     tags: [
       {
         name: "Java",
