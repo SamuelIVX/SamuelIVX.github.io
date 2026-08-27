@@ -193,6 +193,24 @@
   -webkit-text-fill-color: transparent;
 }
 
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient-bg {
+  background: linear-gradient(-45deg, #231E54, #151030, #2a1b3d, #1a1035);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
 /* canvas- styles */
 .canvas-loader {
   font-size: 10px;

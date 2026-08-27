@@ -5,6 +5,6 @@ import EarthCanvas from "./Earth";
 import BallCanvas from "./Ball";
 import ComputersCanvas from "./Computers";
 import StarsCanvas from "./Stars";
-import VantaNet from "./VantaNet";
+import GradientBackground from "./GradientBackground";
 
-export { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas, VantaNet };
+export { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas, GradientBackground };

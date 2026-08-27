@@ -2,7 +2,7 @@
  * Floating icosahedron Ball with a tech-icon decal, plus BallCanvas host.
  * Used by the Tech section for each technology icon.
  */
-import { Suspense } from "react";
+import { Suspense, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Canvas } from "@react-three/fiber";
 import {
@@ -10,12 +10,14 @@ import {
   Float,
   OrbitControls,
   Preload,
-  useTexture,
 } from "@react-three/drei";
+import { TextureLoader } from "three";
 import CanvasLoader from "../Loader";
 
 /**
  * Lit floating mesh with the given texture as a decal.
+ * If the texture fails to load (e.g., SVG files), the ball renders
+ * without the decal overlay.
  * @param {object} props - Component props.
  * @param {string} props.imgUrl - Texture URL for the decal.
  * @returns {JSX.Element} Three.js ball mesh group.
@@ -23,7 +25,17 @@ import CanvasLoader from "../Loader";
  * <Ball imgUrl={reactjs} />
  */
 const Ball = (props) => {
-  const [decal] = useTexture([props.imgUrl]);
+  const [decal, setDecal] = useState(null);
+
+  useEffect(() => {
+    const loader = new TextureLoader();
+    loader.load(
+      props.imgUrl,
+      (texture) => setDecal(texture),
+      undefined,
+      () => setDecal(null)
+    );
+  }, [props.imgUrl]);
 
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
@@ -37,12 +49,14 @@ const Ball = (props) => {
           polygonOffsetFactor={-5}
           flatShading
         />
-        <Decal
-          map={decal}
-          position={[0, 0, 1]}
-          rotation={[2 * Math.PI, 0, 6.25]}
-          flatShading
-        />
+        {decal && (
+          <Decal
+            map={decal}
+            position={[0, 0, 1]}
+            rotation={[2 * Math.PI, 0, 6.25]}
+            flatShading
+          />
+        )}
       </mesh>
     </Float>
   );
@@ -61,7 +75,7 @@ const BallCanvas = ({ icon }) => {
     <Canvas
       //frameloop="always"
       dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{ preserveDrawingBuffer: true, alpha: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />

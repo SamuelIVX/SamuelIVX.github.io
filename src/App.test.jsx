@@ -11,15 +11,15 @@ import PropTypes from "prop-types";
 import App from "./App";
 
 vi.mock("./components/canvas", () => {
-  const VantaNetMock = ({ children }) => <div data-testid="vanta-net">{children}</div>;
-  VantaNetMock.propTypes = { children: PropTypes.node };
+  const GradientBackgroundMock = ({ children }) => <div data-testid="gradient-bg">{children}</div>;
+  GradientBackgroundMock.propTypes = { children: PropTypes.node };
 
   return {
     BallCanvas: () => <div data-testid="ball-canvas" />,
     ComputersCanvas: () => <div data-testid="computers-canvas" />,
     EarthCanvas: () => <div data-testid="earth-canvas" />,
     StarsCanvas: () => <div data-testid="stars-canvas" />,
-    VantaNet: VantaNetMock,
+    GradientBackground: GradientBackgroundMock,
   };
 });
 
