@@ -1,17 +1,18 @@
 # Personal Portfolio Website
 
-**Modern 3D Portfolio**
+**Modern Portfolio**
 
-> A responsive personal portfolio website featuring interactive 3D graphics, smooth animations, and a sleek design to showcase projects, skills, and professional experience.
+> A responsive personal portfolio website featuring interactive 3D graphics, animated backgrounds, smooth animations, and a sleek design to showcase projects, skills, and professional experience.
 
 ## Features
 
-- **3D Graphics** - Interactive Three.js models (computers, Earth, stars)
+- **3D Graphics** - Interactive Three.js models (hero desktop PC, Earth)
+- **Animated Background** - Canvas 2D dots-and-lines network effect
 - **Fully Responsive** - Optimized for all device sizes
 - **Smooth Animations** - Motion animations throughout
-- **Project Showcase** - Detailed project cards with GitHub links
+- **Project Showcase** - Detailed project cards with GitHub and live demo links
 - **Experience Accordion** - Expandable cards for professional experience
-- **Tech Stack Display** - Visual tech stack with icons
+- **Tech Stack Display** - Visual tech stack with icon pills
 - **Contact Form** - Functional form powered by EmailJS
 - **Dark Theme** - Modern dark theme with gradient accents
 
@@ -60,11 +61,11 @@ The site is deployed to GitHub Pages. Pushes to `main` trigger an automatic buil
 ```bash
 src/
 ├── components/        # React components
-│   ├── canvas/       # Three.js canvas components
-│   │   ├── Ball.jsx      # Tech ball component
-│   │   ├── Computers.jsx # 3D computer model
-│   │   ├── Earth.jsx     # 3D Earth model
-│   │   └── Stars.jsx     # Animated stars background
+│   ├── canvas/       # Three.js and Canvas 2D components
+│   │   ├── Computers.jsx      # 3D desktop PC model
+│   │   ├── Earth.jsx          # 3D Earth model
+│   │   ├── Stars.jsx          # Animated stars background
+│   │   └── GradientBackground.jsx # Canvas 2D animated network
 │   ├── About.jsx     # About section
 │   ├── Contact.jsx   # Contact form
 │   ├── Experience.jsx # Experience accordion
