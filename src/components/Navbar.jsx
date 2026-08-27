@@ -29,7 +29,7 @@ const LinkedInIcon = () => (
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
-  const visibleRef = useRef(new Set());
+  const ratiosRef = useRef(new Map());
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,19 +37,32 @@ const Navbar = () => {
         entries.forEach((entry) => {
           const id = entry.target.id;
           if (entry.isIntersecting) {
-            visibleRef.current.add(id);
-            const link = navLinks.find((l) => l.id === id);
-            if (link) setActive(link.title);
+            ratiosRef.current.set(id, entry.intersectionRatio);
           } else {
-            visibleRef.current.delete(id);
+            ratiosRef.current.delete(id);
           }
         });
 
-        if (visibleRef.current.size === 0) {
+        let bestId = "";
+        let bestRatio = 0;
+        for (const [id, ratio] of ratiosRef.current) {
+          if (ratio > bestRatio) {
+            bestRatio = ratio;
+            bestId = id;
+          }
+        }
+
+        if (bestId) {
+          const link = navLinks.find((l) => l.id === bestId);
+          if (link) setActive(link.title);
+        } else {
           setActive("");
         }
       },
-      { threshold: 0.3, rootMargin: "-80px 0px 0px 0px" }
+      {
+        threshold: [0, 0.1, 0.2, 0.3, 0.5, 0.7, 1],
+        rootMargin: "-60px 0px -20% 0px",
+      }
     );
 
     navLinks.forEach((link) => {
