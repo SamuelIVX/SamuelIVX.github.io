@@ -211,11 +211,10 @@ const experiences = [
     company_name: "Amazon Web Services (AWS)",
     icon: amazonwebservices,
     iconBg: "#383E56",
-    date: "Jun 2026 - Aug 2026",
+    date: "Jun 2025 - Aug 2025",
     points: [
-      "Designed and deployed 3 read-only APIs on an Apache Iceberg/Parquet data lake with paginated, snapshot-consistent cursors and column projections, reducing end-to-end query latency from 52s to under 2s and per-query I/O by up to 60% across datasets with 200K+ rows through tiered caching, file-pruning, and sort-compaction optimizations serving granular billing breakdowns to enterprise customers.",
-      "Developed a Cloudscape demo dashboard backed by a serverless API Gateway + Lambda proxy with SigV4 authentication, enabling stakeholders to validate billing breakdowns across all 3 API surfaces end-to-end.",
-      "Owned the feature end-to-end from data modeling through production deployment: API design, Iceberg read engine, CDK infrastructure, CloudWatch observability, and comprehensive hand-off documentation.",
+      "Developed a comprehensive AWS bill computation analytics platform by building an automated Python-based data retrieval and query system, reducing ticket resolution time by >83%.",
+      "Engineered Model Context Protocol(MCP) Server integration that unified multiple complex disparate billing tools into a single AI - powered interface, eliminating context switching overhead by > 85 %.",
     ],
   },
   {
@@ -223,10 +222,11 @@ const experiences = [
     company_name: "Amazon Web Services (AWS)",
     icon: amazonwebservices,
     iconBg: "#383E56",
-    date: "Jun 2025 - Aug 2025",
+    date: "Jun 2026 - Aug 2026",
     points: [
-      "Developed a comprehensive AWS bill computation analytics platform by building an automated Python-based data retrieval and query system, reducing ticket resolution time by >83%.",
-      "Engineered Model Context Protocol(MCP) Server integration that unified multiple complex disparate billing tools into a single AI - powered interface, eliminating context switching overhead by > 85 %.",
+      "Designed and deployed 3 read-only APIs on an Apache Iceberg/Parquet data lake with paginated, snapshot-consistent cursors and column projections, reducing end-to-end query latency from 52s to under 2s and per-query I/O by up to 60% across datasets with 200K+ rows through tiered caching, file-pruning, and sort-compaction optimizations serving granular billing breakdowns to enterprise customers.",
+      "Developed a Cloudscape demo dashboard backed by a serverless API Gateway + Lambda proxy with SigV4 authentication, enabling stakeholders to validate billing breakdowns across all 3 API surfaces end-to-end.",
+      "Owned the feature end-to-end from data modeling through production deployment: API design, Iceberg read engine, CDK infrastructure, CloudWatch observability, and comprehensive hand-off documentation.",
     ],
   },
 ];

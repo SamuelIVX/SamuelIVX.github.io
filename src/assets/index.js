@@ -34,7 +34,7 @@ import maven from "./tech/maven.svg";
 import motion from "./tech/motion.svg";
 
 import AOT from "./company/aot.jpeg";
-import amazonwebservices from "./company/amazonwebservices.png";
+import amazonwebservices from "./company/amazonwebservices.jpeg";
 
 import carwash from "./carwash.png";
 import ecommerce from "./ecommerce.png";
