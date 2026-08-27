@@ -294,6 +294,7 @@ const projects = [
     ],
     image: paycore,
     source_code_link: "https://github.com/SamuelIVX/paycore",
+    live_demo_link: "https://paycorehq.vercel.app/",
   },
   {
     name: "Clarify",
@@ -327,6 +328,7 @@ const projects = [
     ],
     image: clarify,
     source_code_link: "https://github.com/SamuelIVX/clarify",
+    live_demo_link: "https://clarify-study.vercel.app/",
   },
   {
     name: "Full-Stack E-Commerce Web Application",
