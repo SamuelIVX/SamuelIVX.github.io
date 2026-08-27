@@ -3,7 +3,7 @@
  * `navLinks`. Uses IntersectionObserver to highlight the active section
  * as the user scrolls. Click handlers provide instant feedback.
  */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -29,17 +29,25 @@ const LinkedInIcon = () => (
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const visibleRef = useRef(new Set());
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          const id = entry.target.id;
           if (entry.isIntersecting) {
-            const id = entry.target.id;
+            visibleRef.current.add(id);
             const link = navLinks.find((l) => l.id === id);
             if (link) setActive(link.title);
+          } else {
+            visibleRef.current.delete(id);
           }
         });
+
+        if (visibleRef.current.size === 0) {
+          setActive("");
+        }
       },
       { threshold: 0.3, rootMargin: "-80px 0px 0px 0px" }
     );
@@ -69,7 +77,8 @@ const Navbar = () => {
         >
           <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex">
-            Samuel Hernandez Balderas
+            Samuel{" "}
+            <span className="hidden sm:inline">Hernandez Balderas</span>
           </p>
         </a>
         <ul className="list-none hidden sm:flex flex-row gap-10">

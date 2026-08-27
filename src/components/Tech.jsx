@@ -15,7 +15,7 @@ import { technologies } from "../constants";
  */
 const Tech = () => {
   return (
-    <div className="w-full h-[500px]">
+    <div className="w-full" style={{ minHeight: 500 }}>
       <TechBallsCanvas
         icons={technologies.map((t) => t.icon)}
         names={technologies.map((t) => t.name)}

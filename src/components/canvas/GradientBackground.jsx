@@ -6,12 +6,12 @@
 import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-const NODE_COUNT = 60;
-const LINE_THRESHOLD = 180;
+const NODE_COUNT = 80;
+const LINE_THRESHOLD = 200;
 const NODE_RADIUS = 3;
-const DRIFT_SPEED = 0.12;
+const DRIFT_SPEED = 0.3;
 const NODE_COLOR = "#BB6BD9";
-const BG_COLOR = "#0f0a2e";
+const BG_COLOR = "#080520";
 
 const GradientBackground = ({ children }) => {
   const canvasRef = useRef(null);
@@ -23,10 +23,17 @@ const GradientBackground = ({ children }) => {
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
-    let width = canvas.parentElement.clientWidth;
-    let height = canvas.parentElement.clientHeight;
-    canvas.width = width;
-    canvas.height = height;
+    let width = 0;
+    let height = 0;
+
+    const resizeCanvas = () => {
+      width = canvas.parentElement.clientWidth;
+      height = canvas.parentElement.clientHeight;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
 
     const initNodes = () => {
       nodesRef.current = Array.from({ length: NODE_COUNT }, () => ({
@@ -59,7 +66,7 @@ const GradientBackground = ({ children }) => {
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < LINE_THRESHOLD) {
             const alpha = 1 - dist / LINE_THRESHOLD;
-            ctx.strokeStyle = `rgba(187, 107, 217, ${0.35 * alpha})`;
+            ctx.strokeStyle = `rgba(187, 107, 217, ${0.4 * alpha})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
@@ -83,20 +90,21 @@ const GradientBackground = ({ children }) => {
       animFrameRef.current = requestAnimationFrame(loop);
     };
 
+    let resizeTimeout;
     const handleResize = () => {
-      width = canvas.parentElement.clientWidth;
-      height = canvas.parentElement.clientHeight;
-      canvas.width = width;
-      canvas.height = height;
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(resizeCanvas, 100);
     };
 
     const observer = new ResizeObserver(handleResize);
     observer.observe(canvas.parentElement);
 
+    resizeCanvas();
     initNodes();
     loop();
 
     return () => {
+      clearTimeout(resizeTimeout);
       cancelAnimationFrame(animFrameRef.current);
       observer.disconnect();
     };
@@ -107,9 +115,11 @@ const GradientBackground = ({ children }) => {
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
-        style={{ pointerEvents: "none" }}
+        style={{ pointerEvents: "none", zIndex: 0 }}
       />
-      {children}
+      <div className="relative" style={{ zIndex: 10 }}>
+        {children}
+      </div>
     </div>
   );
 };

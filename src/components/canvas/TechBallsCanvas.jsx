@@ -79,9 +79,7 @@ const Ball = ({ imgUrl, position = [0, 0, 0], name = "", index = 0 }) => {
   }, [name]);
 
   return (
-    <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
-      <ambientLight intensity={0.25} />
-      <directionalLight position={[0, 0, 0.05]} />
+    <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1}>
       <mesh castShadow receiveShadow scale={1} position={position}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
@@ -121,7 +119,6 @@ Ball.propTypes = {
   index: PropTypes.number,
 };
 
-
 const TechBallsCanvas = ({ icons, names = [] }) => {
   const radius = 7;
   const count = icons.length;
@@ -133,33 +130,38 @@ const TechBallsCanvas = ({ icons, names = [] }) => {
   const goldenAngle = Math.PI * (3 - Math.sqrt(5));
 
   return (
-    <Canvas
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true, alpha: true }}
-      camera={{ position: [0, 0, 18], fov: 40 }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} />
-        {icons.map((icon, index) => {
-          const y = 1 - (index / (count - 1 || 1)) * 2;
-          const radiusAtY = Math.sqrt(1 - y * y);
-          const theta = goldenAngle * index;
-          const x = radiusAtY * Math.cos(theta);
-          const z = radiusAtY * Math.sin(theta);
+    <div style={{ overflow: "visible" }}>
+      <Canvas
+        dpr={[1, 2]}
+        gl={{ preserveDrawingBuffer: true, alpha: true }}
+        camera={{ position: [0, 0, 18], fov: 40 }}
+        style={{ overflow: "visible" }}
+      >
+        <Suspense fallback={<CanvasLoader />}>
+          <ambientLight intensity={0.25} />
+          <directionalLight position={[0, 0, 0.05]} />
+          <OrbitControls enableZoom={false} />
+          {icons.map((icon, index) => {
+            const y = 1 - (index / (count - 1 || 1)) * 2;
+            const radiusAtY = Math.sqrt(1 - y * y);
+            const theta = goldenAngle * index;
+            const x = radiusAtY * Math.cos(theta);
+            const z = radiusAtY * Math.sin(theta);
 
-          return (
-            <Ball
-              key={index}
-              imgUrl={icon}
-              name={names?.[index] || ""}
-              index={index}
-              position={[x * radius, y * radius, z * radius]}
-            />
-          );
-        })}
-        <Preload all />
-      </Suspense>
-    </Canvas>
+            return (
+              <Ball
+                key={index}
+                imgUrl={icon}
+                name={names?.[index] || ""}
+                index={index}
+                position={[x * radius, y * radius, z * radius]}
+              />
+            );
+          })}
+          <Preload all />
+        </Suspense>
+      </Canvas>
+    </div>
   );
 };
 
