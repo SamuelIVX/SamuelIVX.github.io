@@ -11,7 +11,7 @@ const LINE_THRESHOLD = 200;
 const NODE_RADIUS = 3;
 const DRIFT_SPEED = 0.3;
 const NODE_COLOR = "#BB6BD9";
-const BG_COLOR = "#080520";
+const BG_COLOR = "#050816";
 
 const GradientBackground = ({ children }) => {
   const canvasRef = useRef(null);
@@ -117,7 +117,7 @@ const GradientBackground = ({ children }) => {
         className="absolute inset-0 w-full h-full"
         style={{ pointerEvents: "none", zIndex: 0 }}
       />
-      <div className="relative" style={{ zIndex: 10 }}>
+      <div className="relative" style={{ zIndex: 10, overflow: "visible" }}>
         {children}
       </div>
     </div>
