@@ -61,7 +61,7 @@ const ProjectCard = ({
             <div className="flex gap-2">
               <div
                 onClick={() => window.open(source_code_link, "_blank")}
-                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-white/20"
                 aria-label="View source code on GitHub"
                 role="button"
                 tabIndex={0}
@@ -81,7 +81,7 @@ const ProjectCard = ({
               {live_demo_link && (
                 <div
                   onClick={() => window.open(live_demo_link, "_blank")}
-                  className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                  className="violet-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/40"
                   aria-label="View live demo"
                   role="button"
                   tabIndex={0}
