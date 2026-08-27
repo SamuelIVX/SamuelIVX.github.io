@@ -13,7 +13,7 @@ const Tech = () => {
         >
           <img
             src={tech.icon}
-            alt={tech.name}
+            alt=""
             className="w-5 h-5 object-contain transition-transform duration-300 group-hover:scale-110"
           />
           <span className="text-secondary text-[14px]">{tech.name}</span>

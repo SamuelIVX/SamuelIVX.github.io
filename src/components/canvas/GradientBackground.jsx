@@ -27,12 +27,21 @@ const GradientBackground = ({ children }) => {
     let height = 0;
 
     const resizeCanvas = () => {
+      const previousWidth = width;
+      const previousHeight = height;
       width = canvas.parentElement.clientWidth;
       height = canvas.parentElement.clientHeight;
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = Math.round(width * dpr);
       canvas.height = Math.round(height * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      if (previousWidth > 0 && previousHeight > 0) {
+        for (const node of nodesRef.current) {
+          node.x = (node.x / previousWidth) * width;
+          node.y = (node.y / previousHeight) * height;
+        }
+      }
     };
 
     const initNodes = () => {
