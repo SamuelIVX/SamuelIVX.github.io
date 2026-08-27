@@ -53,38 +53,22 @@ const ProjectCard = ({
           />
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div className="flex gap-2">
-              <div
-                onClick={() => window.open(source_code_link, "_blank")}
+              <button
+                onClick={() => window.open(source_code_link, "_blank", "noopener,noreferrer")}
                 className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-white/20"
                 aria-label="View source code on GitHub"
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    window.open(source_code_link, "_blank");
-                  }
-                }}
               >
                 <img
                   src={github}
                   alt="github"
                   className="w-1/2 h-1/2 object-contain"
                 />
-              </div>
+              </button>
               {live_demo_link && (
-                <div
-                  onClick={() => window.open(live_demo_link, "_blank")}
+                <button
+                  onClick={() => window.open(live_demo_link, "_blank", "noopener,noreferrer")}
                   className="violet-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/40"
                   aria-label="View live demo"
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      window.open(live_demo_link, "_blank");
-                    }
-                  }}
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -99,7 +83,7 @@ const ProjectCard = ({
                     <polyline points="15 3 21 3 21 9" />
                     <line x1="10" y1="14" x2="21" y2="3" />
                   </svg>
-                </div>
+                </button>
               )}
             </div>
           </div>
