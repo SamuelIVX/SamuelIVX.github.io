@@ -18,7 +18,7 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
+        <p className={styles.sectionSubText}>About Me</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
@@ -26,10 +26,13 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        Software Engineer specializing in scalable solutions, process
-        optimization, and data-driven development. Experienced in
-        application design, and dynamic web development, delivering impactful
-        results across diverse projects.
+        I&apos;m Samuel Hernandez Balderas — a senior at the College of Staten Island
+        majoring in Computer Science with a minor in Mathematics. I&apos;ve spent
+        three summers as an SDE Intern at AWS, all within the AWS Billing Org, where
+        I built scalable end-to-end projects that deliver seamless solutions to
+        customers and internal engineers. Outside of code, I tinker with PCs, read
+        manga, and collect figurines and comics. Most of all, I enjoy building
+        projects that solve real-world problems.
       </motion.p>
     </>
   );

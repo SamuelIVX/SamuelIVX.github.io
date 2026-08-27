@@ -11,7 +11,7 @@ import {
   Tech,
   Works,
   StarsCanvas,
-  VantaNet,
+  GradientBackground,
 } from "./components";
 
 /**
@@ -24,16 +24,14 @@ import {
 const App = () => {
   return (
     <div id="main-content" className="relative z-0 bg-primary">
-      <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-        <Navbar />
-        <Hero />
-      </div>
-      <VantaNet>
+      <Navbar />
+      <Hero />
+      <GradientBackground>
         <About />
         <Experience />
         <Tech />
         <Works />
-      </VantaNet>
+      </GradientBackground>
       <div className="relative z-0">
         <Contact />
         <StarsCanvas />

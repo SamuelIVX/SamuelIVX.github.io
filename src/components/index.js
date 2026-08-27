@@ -1,7 +1,7 @@
 /**
  * Barrel re-exports for portfolio sections and canvas components.
  */
-import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas, VantaNet } from './canvas';
+import { EarthCanvas, ComputersCanvas, StarsCanvas, GradientBackground } from './canvas';
 import Hero from './Hero';
 import Navbar from './Navbar';
 import About from './About';
@@ -19,8 +19,7 @@ export {
   Works,
   Contact,
   EarthCanvas, 
-  BallCanvas, 
   ComputersCanvas, 
   StarsCanvas,
-  VantaNet
+  GradientBackground,
 }

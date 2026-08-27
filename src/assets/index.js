@@ -11,6 +11,9 @@ import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
+import paycore from "./paycore.png";
+import clarify from "./clarify.png";
+
 import css from "./tech/css.png";
 import python from "./tech/python.svg";
 import git from "./tech/git.png";
@@ -23,7 +26,7 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import java from "./tech/java.webp";
 import c from "./tech/c++.png";
-import aws from "./tech/aws.png";
+import aws from "./tech/aws.jpeg";
 import mysql from "./tech/mysql.png";
 
 import nextjs from "./tech/nextjs.svg";
@@ -34,7 +37,7 @@ import maven from "./tech/maven.svg";
 import motion from "./tech/motion.svg";
 
 import AOT from "./company/aot.jpeg";
-import amazonwebservices from "./company/amazonwebservices.png";
+import amazonwebservices from "./company/amazonwebservices.jpeg";
 
 import carwash from "./carwash.png";
 import ecommerce from "./ecommerce.png";
@@ -50,6 +53,8 @@ export {
   github,
   menu,
   close,
+  paycore,
+  clarify,
   css,
   python,
   git,

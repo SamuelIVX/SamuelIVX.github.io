@@ -32,7 +32,9 @@ import {
   carwash,
   ecommerce,
   deltabase,
-  foodsense
+  foodsense,
+  paycore,
+  clarify
 } from "../assets";
 
 /**
@@ -217,6 +219,18 @@ const experiences = [
       "Engineered Model Context Protocol(MCP) Server integration that unified multiple complex disparate billing tools into a single AI - powered interface, eliminating context switching overhead by > 85 %.",
     ],
   },
+  {
+    title: "Software Development Engineer Intern",
+    company_name: "Amazon Web Services (AWS)",
+    icon: amazonwebservices,
+    iconBg: "#383E56",
+    date: "Jun 2026 - Aug 2026",
+    points: [
+      "Designed and deployed 3 read-only APIs on an Apache Iceberg/Parquet data lake with paginated, snapshot-consistent cursors and column projections, reducing end-to-end query latency from 52s to under 2s and per-query I/O by up to 60% across datasets with 200K+ rows through tiered caching, file-pruning, and sort-compaction optimizations serving granular billing breakdowns to enterprise customers.",
+      "Developed a Cloudscape demo dashboard backed by a serverless API Gateway + Lambda proxy with SigV4 authentication, enabling stakeholders to validate billing breakdowns across all 3 API surfaces end-to-end.",
+      "Owned the feature end-to-end from data modeling through production deployment: API design, Iceberg read engine, CDK infrastructure, CloudWatch observability, and comprehensive hand-off documentation.",
+    ],
+  },
 ];
 
 const placeholderImage =
@@ -226,19 +240,23 @@ const projects = [
   {
     name: "Interleave",
     description:
-      "Java 26 explicit-state model checker implementing POR-to-DPOR optimizations for efficient concurrency bug detection in multithreaded programs.",
+      "Explicit-state model checker for multithreaded programs. Implements POR-to-DPOR optimizations to efficiently detect concurrency bugs in Java.",
     tags: [
       {
-        name: "Java 26",
+        name: "Java",
         color: "green-text-gradient",
       },
       {
-        name: "Model Checking",
+        name: "Model Checker",
         color: "blue-text-gradient",
       },
       {
-        name: "Concurrency",
+        name: "DPOR",
         color: "pink-text-gradient",
+      },
+      {
+        name: "Concurrency",
+        color: "cyan-text-gradient",
       },
     ],
     image: placeholderImage,
@@ -254,20 +272,29 @@ const projects = [
         color: "blue-text-gradient",
       },
       {
-        name: "Supabase",
+        name: "TypeScript",
         color: "green-text-gradient",
       },
       {
-        name: "PostgreSQL",
+        name: "Supabase",
         color: "pink-text-gradient",
       },
       {
-        name: "RLS",
+        name: "PostgreSQL",
         color: "purple-text-gradient",
       },
+      {
+        name: "RLS",
+        color: "cyan-text-gradient",
+      },
+      {
+        name: "Payroll",
+        color: "yellow-text-gradient",
+      },
     ],
-    image: placeholderImage,
+    image: paycore,
     source_code_link: "https://github.com/SamuelIVX/paycore",
+    live_demo_link: "https://paycorehq.vercel.app/",
   },
   {
     name: "Clarify",
@@ -287,24 +314,33 @@ const projects = [
         color: "pink-text-gradient",
       },
       {
-        name: "Education",
+        name: "Flashcards",
+        color: "purple-text-gradient",
+      },
+      {
+        name: "Study Tool",
         color: "yellow-text-gradient",
       },
+      {
+        name: "Education",
+        color: "cyan-text-gradient",
+      },
     ],
-    image: placeholderImage,
+    image: clarify,
     source_code_link: "https://github.com/SamuelIVX/clarify",
+    live_demo_link: "https://clarify-study.vercel.app/",
   },
   {
     name: "Full-Stack E-Commerce Web Application",
     description:
-      "Developed a full-stack, responsive e-commerce web application using Next.js and a headless CMS (Wix JavaScript SDK) to showcase advanced product filtering, category management, and cart functionalities. Leveraged modern frameworks, state management with Zustand, and server-side rendering for optimal performance and scalability.",
+      "Full-stack e-commerce platform with product filtering, category management, and cart functionality. Built with Next.js, TailwindCSS, Zustand state management, and server-side rendering.",
     tags: [
       {
         name: "Next.js",
         color: "blue-text-gradient",
       },
       {
-        name: "WIX JavaScript SDK",
+        name: "TypeScript",
         color: "green-text-gradient",
       },
       {
@@ -312,12 +348,12 @@ const projects = [
         color: "pink-text-gradient",
       },
       {
-        name: "TypeScript",
-        color: "yellow-text-gradient",
+        name: "Zustand",
+        color: "purple-text-gradient",
       },
       {
-        name: "User Authentication",
-        color: "orange-text-gradient",
+        name: "SSR",
+        color: "yellow-text-gradient",
       },
     ],
     image: ecommerce,
@@ -326,35 +362,27 @@ const projects = [
   {
     name: "Car Wash Simulation",
     description:
-      "Final project for my Data Structures & Algorithms course that simulates a Car Wash utilizing a Queue based on Linked-Nodes and OOP applications.",
+      "Discrete-event simulation of a car wash queue system. Implements linked-node queue data structures with object-oriented design to model real-time service flow.",
     tags: [
       {
         name: "C++",
         color: "blue-text-gradient",
       },
       {
-        name: "Object-Oriented Programming",
+        name: "Data Structures & Algorithms",
         color: "green-text-gradient",
       },
       {
-        name: "Data Structures & Algorithms",
+        name: "Polymorphism",
         color: "pink-text-gradient",
       },
       {
-        name: "Polymorphism",
+        name: "Queue",
         color: "purple-text-gradient",
       },
       {
-        name: "Parallel Processing",
-        color: "cyan-text-gradient",
-      },
-      {
-        name: "Time Simulation",
+        name: "Simulation",
         color: "yellow-text-gradient",
-      },
-      {
-        name: "Probability",
-        color: "orange-text-gradient",
       },
     ],
     image: carwash,
@@ -370,10 +398,6 @@ const projects = [
         color: "green-text-gradient",
       },
       {
-        name: "JavaScript",
-        color: "pink-text-gradient",
-      },
-      {
         name: "CSS",
         color: "purple-text-gradient",
       },
@@ -386,16 +410,16 @@ const projects = [
         color: "yellow-text-gradient",
       },
       {
-        name: "DCA Simulation",
+        name: "Stocks",
         color: "orange-text-gradient",
       },
       {
-        name: "Data-Range Mapping",
-        color: "red-text-gradient",
+        name: "Cryptocurrency",
+        color: "pink-text-gradient",
       },
       {
-        name: "React-Context",
-        color: "pink-text-gradient",
+        name: "Real-time Data",
+        color: "blue-text-gradient",
       },
     ],
     image: deltabase,
@@ -404,7 +428,7 @@ const projects = [
   {
     name: "FoodSense",
     description:
-      "FoodSense is a Java Swing desktop app for scanning grocery barcodes and instantly viewing product nutrition. It supports live barcode scanning via your webcam (JavaCV + ZXing) or manual barcode entry, where responses are parsed with Gson. Built with Maven (Java 25), using javacv-platform, zxing-javase, and gson.",
+      "Desktop nutrition lookup tool that scans grocery barcodes via webcam or manual entry. Uses JavaCV and ZXing for real-time barcode detection, with Gson-parsed product data.",
     tags: [
       {
         name: "Java",
@@ -431,12 +455,16 @@ const projects = [
         color: "orange-text-gradient",
       },
       {
-        name: "Producer-Consumer Pipeline",
-        color: "red-text-gradient",
+        name: "Barcode Scanning",
+        color: "blue-text-gradient",
       },
       {
-        name: "Barcode-Detections Algorithm",
+        name: "Webcam",
         color: "pink-text-gradient",
+      },
+      {
+        name: "Desktop App",
+        color: "purple-text-gradient",
       },
     ],
     image: foodsense,

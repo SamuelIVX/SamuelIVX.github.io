@@ -35,7 +35,7 @@ const EarthCanvas = () => {
     <Canvas
       shadows
       frameloop="demand"
-      gL={{ preserveDrawingBuffer: true }}
+      gl={{ preserveDrawingBuffer: true }}
       camera={{
         fov: 45,
         near: 0.1,

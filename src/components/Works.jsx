@@ -3,7 +3,6 @@
  * Wrapped with SectionWrapper (empty idName).
  */
 import PropTypes from "prop-types";
-import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { github } from "../assets";
@@ -38,16 +37,13 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  live_demo_link,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+      <div
+        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full border border-white/10 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(187,107,217,0.3)] hover:border-purple-400/30"
+        style={{ boxShadow: "0px 35px 120px -15px #211e35" }}
       >
         <div className="relative w-full h-[230px]">
           <img
@@ -56,24 +52,39 @@ const ProjectCard = ({
             className="w-full h-full object-cover rounded-2xl"
           />
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-              aria-label="View source code on GitHub"
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  window.open(source_code_link, "_blank");
-                }
-              }}
-            >
-              <img
-                src={github}
-                alt="github"
-                className="w-1/2 h-1/2 object-contain"
-              />
+            <div className="flex gap-2">
+              <button
+                onClick={() => window.open(source_code_link, "_blank", "noopener,noreferrer")}
+                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-white/20"
+                aria-label="View source code on GitHub"
+              >
+                <img
+                  src={github}
+                  alt="github"
+                  className="w-1/2 h-1/2 object-contain"
+                />
+              </button>
+              {live_demo_link && (
+                <button
+                  onClick={() => window.open(live_demo_link, "_blank", "noopener,noreferrer")}
+                  className="violet-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/40"
+                  aria-label="View live demo"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-1/2 h-1/2 text-white"
+                  >
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -88,7 +99,7 @@ const ProjectCard = ({
             </p>
           ))}
         </div>
-      </Tilt>
+      </div>
     </motion.div>
   );
 };
@@ -106,6 +117,7 @@ ProjectCard.propTypes = {
   ).isRequired,
   image: PropTypes.string.isRequired,
   source_code_link: PropTypes.string.isRequired,
+  live_demo_link: PropTypes.string,
 };
 
 /**

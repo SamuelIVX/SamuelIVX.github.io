@@ -1,29 +1,26 @@
 /**
- * Tech stack grid — one BallCanvas per entry in `technologies`.
- * Wrapped with SectionWrapper (empty idName — not a nav target).
+ * Tech stack grid — 2D icon + name pills, no WebGL canvas.
  */
-import { BallCanvas } from "./canvas";
-import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
 
-/**
- * Row of floating 3D tech icon balls.
- * @returns {JSX.Element} Tech icon grid.
- * @example
- * // Exported as SectionWrapper(Tech, "")
- * <Tech />
- */
 const Tech = () => {
   return (
-    <div className="flex flex-row flex-wrap justify-center gap-10">
-      {technologies.map((technology) => (
-        <div className="w-28 h-28" key={technology.name}>
-          <BallCanvas icon={technology.icon} />
+    <div className="flex flex-wrap gap-3 mt-10 justify-center">
+      {technologies.map((tech) => (
+        <div
+          key={tech.name}
+          className="group w-fit flex items-center gap-1.5 bg-tertiary px-2.5 py-1 rounded-full border border-white/5 transition-all duration-300 hover:scale-105 hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(187,107,217,0.25)] hover:bg-[#1a1245]"
+        >
+          <img
+            src={tech.icon}
+            alt=""
+            className="w-5 h-5 object-contain transition-transform duration-300 group-hover:scale-110"
+          />
+          <span className="text-secondary text-[14px]">{tech.name}</span>
         </div>
       ))}
     </div>
   );
 };
 
-const TechComponent = SectionWrapper(Tech, "");
-export default TechComponent;
+export default Tech;
