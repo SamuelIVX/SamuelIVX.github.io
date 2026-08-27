@@ -241,16 +241,20 @@ const projects = [
       "Java 26 explicit-state model checker implementing POR-to-DPOR optimizations for efficient concurrency bug detection in multithreaded programs.",
     tags: [
       {
-        name: "Java 26",
+        name: "Java",
         color: "green-text-gradient",
       },
       {
-        name: "Model Checking",
+        name: "Model Checker",
         color: "blue-text-gradient",
       },
       {
-        name: "Concurrency",
+        name: "DPOR",
         color: "pink-text-gradient",
+      },
+      {
+        name: "Concurrency",
+        color: "cyan-text-gradient",
       },
     ],
     image: placeholderImage,
@@ -266,16 +270,24 @@ const projects = [
         color: "blue-text-gradient",
       },
       {
-        name: "Supabase",
+        name: "TypeScript",
         color: "green-text-gradient",
       },
       {
-        name: "PostgreSQL",
+        name: "Supabase",
         color: "pink-text-gradient",
       },
       {
-        name: "RLS",
+        name: "PostgreSQL",
         color: "purple-text-gradient",
+      },
+      {
+        name: "RLS",
+        color: "cyan-text-gradient",
+      },
+      {
+        name: "Payroll",
+        color: "yellow-text-gradient",
       },
     ],
     image: placeholderImage,
@@ -299,8 +311,16 @@ const projects = [
         color: "pink-text-gradient",
       },
       {
-        name: "Education",
+        name: "Flashcards",
+        color: "purple-text-gradient",
+      },
+      {
+        name: "Study Tool",
         color: "yellow-text-gradient",
+      },
+      {
+        name: "Education",
+        color: "cyan-text-gradient",
       },
     ],
     image: placeholderImage,
@@ -316,7 +336,7 @@ const projects = [
         color: "blue-text-gradient",
       },
       {
-        name: "WIX JavaScript SDK",
+        name: "TypeScript",
         color: "green-text-gradient",
       },
       {
@@ -324,12 +344,12 @@ const projects = [
         color: "pink-text-gradient",
       },
       {
-        name: "TypeScript",
-        color: "yellow-text-gradient",
+        name: "Zustand",
+        color: "purple-text-gradient",
       },
       {
-        name: "User Authentication",
-        color: "orange-text-gradient",
+        name: "SSR",
+        color: "yellow-text-gradient",
       },
     ],
     image: ecommerce,
@@ -345,28 +365,20 @@ const projects = [
         color: "blue-text-gradient",
       },
       {
-        name: "Object-Oriented Programming",
+        name: "Data Structures & Algorithms",
         color: "green-text-gradient",
       },
       {
-        name: "Data Structures & Algorithms",
+        name: "Polymorphism",
         color: "pink-text-gradient",
       },
       {
-        name: "Polymorphism",
+        name: "Queue",
         color: "purple-text-gradient",
       },
       {
-        name: "Parallel Processing",
-        color: "cyan-text-gradient",
-      },
-      {
-        name: "Time Simulation",
+        name: "Simulation",
         color: "yellow-text-gradient",
-      },
-      {
-        name: "Probability",
-        color: "orange-text-gradient",
       },
     ],
     image: carwash,
@@ -382,10 +394,6 @@ const projects = [
         color: "green-text-gradient",
       },
       {
-        name: "JavaScript",
-        color: "pink-text-gradient",
-      },
-      {
         name: "CSS",
         color: "purple-text-gradient",
       },
@@ -398,16 +406,16 @@ const projects = [
         color: "yellow-text-gradient",
       },
       {
-        name: "DCA Simulation",
+        name: "Stocks",
         color: "orange-text-gradient",
       },
       {
-        name: "Data-Range Mapping",
-        color: "red-text-gradient",
+        name: "Cryptocurrency",
+        color: "pink-text-gradient",
       },
       {
-        name: "React-Context",
-        color: "pink-text-gradient",
+        name: "Real-time Data",
+        color: "blue-text-gradient",
       },
     ],
     image: deltabase,
@@ -443,12 +451,16 @@ const projects = [
         color: "orange-text-gradient",
       },
       {
-        name: "Producer-Consumer Pipeline",
-        color: "red-text-gradient",
+        name: "Barcode Scanning",
+        color: "blue-text-gradient",
       },
       {
-        name: "Barcode-Detections Algorithm",
+        name: "Webcam",
         color: "pink-text-gradient",
+      },
+      {
+        name: "Desktop App",
+        color: "purple-text-gradient",
       },
     ],
     image: foodsense,
