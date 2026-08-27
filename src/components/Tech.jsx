@@ -9,7 +9,7 @@ const Tech = () => {
       {technologies.map((tech) => (
         <div
           key={tech.name}
-          className="flex items-center gap-1.5 bg-tertiary px-2.5 py-1 rounded-full border border-white/5 transition-all duration-300 hover:border-purple-400/50 hover:shadow-md hover:shadow-purple-500/20 hover:bg-[#1a1245]"
+          className="w-fit flex items-center gap-1.5 bg-tertiary px-2.5 py-1 rounded-full border border-white/5 transition-all duration-300 hover:border-purple-400/50 hover:shadow-md hover:shadow-purple-500/20 hover:bg-[#1a1245]"
         >
           <img
             src={tech.icon}
