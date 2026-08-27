@@ -117,13 +117,13 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-              <a
-                href="https://www.linkedin.com/in/samuelhb/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondary hover:text-white"
-                aria-label="LinkedIn"
-              >
+            <a
+              href="https://www.linkedin.com/in/samuelhb/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary hover:text-white"
+              aria-label="LinkedIn"
+            >
               <LinkedInIcon />
             </a>
           </li>
