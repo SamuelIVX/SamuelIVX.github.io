@@ -3,7 +3,6 @@
  * Wrapped with SectionWrapper (empty idName).
  */
 import PropTypes from "prop-types";
-import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { github } from "../assets";
@@ -42,13 +41,8 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full border border-white/10"
+      <div
+        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full border border-white/10 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(187,107,217,0.3)] hover:border-purple-400/30"
         style={{ boxShadow: "0px 35px 120px -15px #211e35" }}
       >
         <div className="relative w-full h-[230px]">
@@ -121,7 +115,7 @@ const ProjectCard = ({
             </p>
           ))}
         </div>
-      </Tilt>
+      </div>
     </motion.div>
   );
 };
