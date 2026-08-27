@@ -5,7 +5,7 @@ import { technologies } from "../constants";
 
 const Tech = () => {
   return (
-    <div className="grid grid-cols-6 gap-2 mt-10" style={{ overflow: "visible" }}>
+    <div className="flex flex-wrap gap-3 mt-10 justify-center">
       {technologies.map((tech) => (
         <div
           key={tech.name}
