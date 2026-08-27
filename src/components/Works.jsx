@@ -1,6 +1,5 @@
 /**
  * Projects section — intro copy plus ProjectCard grid from `projects` constants.
- * Scattered tech orbs float in the background.
  * Wrapped with SectionWrapper (empty idName).
  */
 import PropTypes from "prop-types";
@@ -11,20 +10,27 @@ import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
-import TechOrb from "./TechOrb";
-import {
-  threejs, motion as motionIcon, supabase, postgresql, vercel, mysql,
-} from "../assets";
 
-const orbs = [
-  { icon: threejs, name: "Three.js", size: 50, style: { top: "5%", left: "90%", animationDelay: "0s" } },
-  { icon: motionIcon, name: "Motion", size: 45, style: { top: "25%", left: "85%", animationDelay: "0.9s" } },
-  { icon: supabase, name: "Supabase", size: 55, style: { top: "50%", left: "92%", animationDelay: "1.8s" } },
-  { icon: postgresql, name: "PostgreSQL", size: 40, style: { top: "70%", left: "88%", animationDelay: "2.7s" } },
-  { icon: vercel, name: "Vercel", size: 45, style: { top: "15%", left: "3%", animationDelay: "3.6s" } },
-  { icon: mysql, name: "MySQL", size: 50, style: { top: "60%", left: "5%", animationDelay: "4.5s" } },
-];
-
+/**
+ * Tilted project card with screenshot, GitHub link, description, and tags.
+ * @param {object} props - Component props.
+ * @param {number} props.index - Index used to stagger fadeIn.
+ * @param {string} props.name - Project title.
+ * @param {string} props.description - Short project blurb.
+ * @param {{ name: string, color: string }[]} props.tags - Tech/tag chips.
+ * @param {string} props.image - Screenshot/asset URL.
+ * @param {string} props.source_code_link - Repository URL opened in a new tab.
+ * @returns {JSX.Element} Animated project card.
+ * @example
+ * <ProjectCard
+ *   index={0}
+ *   name="Deltabase"
+ *   description="Portfolio demo."
+ *   tags={[{ name: "react", color: "blue-text-gradient" }]}
+ *   image={deltabase}
+ *   source_code_link="https://github.com/SamuelIVX/Deltabase"
+ * />
+ */
 const ProjectCard = ({
   index,
   name,
@@ -88,6 +94,7 @@ const ProjectCard = ({
   );
 };
 
+// Prop validation
 ProjectCard.propTypes = {
   index: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
@@ -102,12 +109,16 @@ ProjectCard.propTypes = {
   source_code_link: PropTypes.string.isRequired,
 };
 
+/**
+ * Projects heading, blurb, and card grid.
+ * @returns {JSX.Element} Works section contents.
+ * @example
+ * // Exported as SectionWrapper(Works, "")
+ * <Works />
+ */
 const Works = () => {
   return (
-    <div className="relative">
-      {orbs.map((orb) => (
-        <TechOrb key={orb.name} {...orb} />
-      ))}
+    <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>My projects</p>
         <h2 className={styles.sectionHeadText}>Projects.</h2>
@@ -129,7 +140,7 @@ const Works = () => {
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

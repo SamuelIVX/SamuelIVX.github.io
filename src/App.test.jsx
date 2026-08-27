@@ -19,6 +19,7 @@ vi.mock("./components/canvas", () => {
     EarthCanvas: () => <div data-testid="earth-canvas" />,
     StarsCanvas: () => <div data-testid="stars-canvas" />,
     GradientBackground: GradientBackgroundMock,
+    TechBallsCanvas: () => <div data-testid="tech-balls-canvas" />,
   };
 });
 
