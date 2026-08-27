@@ -6,12 +6,12 @@
 import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-const NODE_COUNT = 50;
-const LINE_THRESHOLD = 120;
-const NODE_RADIUS = 1.5;
-const DRIFT_SPEED = 0.15;
+const NODE_COUNT = 60;
+const LINE_THRESHOLD = 180;
+const NODE_RADIUS = 3;
+const DRIFT_SPEED = 0.12;
 const NODE_COLOR = "#BB6BD9";
-const BG_COLOR = "#231E54";
+const BG_COLOR = "#0f0a2e";
 
 const GradientBackground = ({ children }) => {
   const canvasRef = useRef(null);
@@ -59,8 +59,8 @@ const GradientBackground = ({ children }) => {
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < LINE_THRESHOLD) {
             const alpha = 1 - dist / LINE_THRESHOLD;
-            ctx.strokeStyle = `rgba(187, 107, 217, ${0.15 * alpha})`;
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = `rgba(187, 107, 217, ${0.35 * alpha})`;
+            ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);

@@ -35,7 +35,7 @@ const ExperienceCard = ({ experience, index, isOpen, toggle }) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className="w-full bg-tertiary rounded-2xl p-5 mb-4 cursor-pointer border-l-4 hover:shadow-lg hover:shadow-purple-500/10 transition-shadow"
+      className="w-full bg-tertiary rounded-2xl p-5 mb-4 cursor-pointer border-l-4 transition-all duration-300 hover:bg-[#1a1245] hover:shadow-lg hover:shadow-purple-500/20 hover:border-purple-400/60"
       style={{ borderLeftColor: experience.iconBg }}
       onClick={toggle}
       role="button"
@@ -150,7 +150,7 @@ const Experience = () => {
         <h2 className={styles.sectionHeadText}>Work Experience.</h2>
       </motion.div>
       <div className="mt-20 flex flex-col">
-        {experiences.map((experience, index) => (
+        {[...experiences].reverse().map((experience, index) => (
           <ExperienceCard
             key={index}
             experience={experience}

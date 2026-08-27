@@ -47,7 +47,7 @@ const FALLBACK_COLORS = [
   "#A3E4D7", "#FAD7A0", "#A9CCE3", "#D5DBDB", "#EDBB99",
 ];
 
-const Ball = ({ imgUrl, position, name, index }) => {
+const Ball = ({ imgUrl, position = [0, 0, 0], name = "", index = 0 }) => {
   const [decal, setDecal] = useState(null);
   const [loadFailed, setLoadFailed] = useState(!imgUrl);
 
@@ -82,10 +82,10 @@ const Ball = ({ imgUrl, position, name, index }) => {
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
       <ambientLight intensity={0.25} />
       <directionalLight position={[0, 0, 0.05]} />
-      <mesh castShadow receiveShadow scale={2.75} position={position}>
+      <mesh castShadow receiveShadow scale={1} position={position}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
-          color={loadFailed && !decal ? fallbackColor : "#fff8eb"}
+          color={loadFailed && !decal ? fallbackColor : "#1a1040"}
           polygonOffset
           polygonOffsetFactor={-5}
           flatShading
@@ -121,14 +121,9 @@ Ball.propTypes = {
   index: PropTypes.number,
 };
 
-Ball.defaultProps = {
-  position: [0, 0, 0],
-  name: "",
-  index: 0,
-};
 
 const TechBallsCanvas = ({ icons, names = [] }) => {
-  const radius = 4;
+  const radius = 7;
   const count = icons.length;
 
   if (count === 0) {
@@ -141,7 +136,7 @@ const TechBallsCanvas = ({ icons, names = [] }) => {
     <Canvas
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true, alpha: true }}
-      camera={{ position: [0, 0, 8], fov: 50 }}
+      camera={{ position: [0, 0, 18], fov: 40 }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
