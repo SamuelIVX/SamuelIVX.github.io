@@ -24,7 +24,7 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className={styles.sectionBody}
       >
         I&apos;m Samuel Hernandez Balderas — a senior at the College of Staten Island
         majoring in Computer Science with a minor in Mathematics. I&apos;ve spent

@@ -1,41 +1,38 @@
 /**
- * Portfolio content data — nav links, services, technologies, experiences,
- * and projects. Edit here rather than hardcoding in JSX section components.
+ * Portfolio content data — nav links, technologies, experiences, and
+ * projects. Edit here rather than hardcoding in JSX section components.
  */
 import {
-  backend,
-  creator,
-  mobile,
-  web,
-  css,
-  python,
-  git,
-  html,
-  javascript,
-  nodejs,
-  reactjs,
-  tailwind,
-  typescript,
-  java,
-  c,
-  aws,
-  mysql,
-  nextjs,
-  supabase,
-  postgresql,
-  vercel,
-  maven,
-  motion,
-  threejs,
+  CSS,
+  PYTHON,
+  GIT,
+  HTML,
+  JAVASCRIPT,
+  NODEJS,
+  REACTJS,
+  TAILWIND,
+  TYPESCRIPT,
+  THREEJS,
+  JAVA,
+  C,
+  AWS,
+  MYSQL,
+  NEXTJS,
+  SUPABASE,
+  POSTGRESQL,
+  VERCEL,
+  MAVEN,
+  MOTION,
   AOT,
-  amazonwebservices,
-  carwash,
-  ecommerce,
-  deltabase,
-  foodsense,
-  paycore,
-  clarify
+  AMAZONWEBSERVICES,
+  PAYCORE,
+  CLARIFY,
+  ECOMMERCE,
+  CARWASH,
+  DELTABASE,
+  FOODSENSE,
 } from "../assets";
+import { PLACEHOLDER_IMAGE } from "./placeholder";
 
 /**
  * Hash-nav targets rendered by Navbar (About / Work / Contact).
@@ -57,105 +54,86 @@ export const navLinks = [
   },
 ];
 
-const services = [
-  {
-    title: "Software Developer",
-    icon: web,
-  },
-  {
-    title: "Front-End Developer",
-    icon: mobile,
-  },
-  {
-    title: "Cloud Computing Engineer",
-    icon: backend,
-  },
-  {
-    title: "Machine Learning Engineer",
-    icon: creator,
-  },
-];
-
 const technologies = [
   {
     name: "HTML 5",
-    icon: html,
+    icon: HTML,
   },
   {
     name: "CSS 3",
-    icon: css,
+    icon: CSS,
   },
   {
     name: "JavaScript",
-    icon: javascript,
+    icon: JAVASCRIPT,
   },
   {
     name: "TypeScript",
-    icon: typescript,
+    icon: TYPESCRIPT,
   },
   {
     name: "React JS",
-    icon: reactjs,
+    icon: REACTJS,
   },
   {
     name: "Next.js",
-    icon: nextjs,
+    icon: NEXTJS,
   },
   {
     name: "Tailwind CSS",
-    icon: tailwind,
+    icon: TAILWIND,
   },
   {
     name: "Node JS",
-    icon: nodejs,
+    icon: NODEJS,
   },
   {
     name: "Java",
-    icon: java,
+    icon: JAVA,
   },
   {
     name: "C++",
-    icon: c,
+    icon: C,
   },
   {
     name: "Python",
-    icon: python,
+    icon: PYTHON,
   },
   {
     name: "Three.js",
-    icon: threejs,
+    icon: THREEJS,
   },
   {
     name: "Motion",
-    icon: motion,
+    icon: MOTION,
   },
   {
     name: "Supabase",
-    icon: supabase,
+    icon: SUPABASE,
   },
   {
     name: "PostgreSQL",
-    icon: postgresql,
+    icon: POSTGRESQL,
   },
   {
     name: "Vercel",
-    icon: vercel,
+    icon: VERCEL,
   },
   {
     name: "Maven",
-    icon: maven,
+    icon: MAVEN,
   },
   {
     name: "git",
-    icon: git,
+    icon: GIT,
   },
   {
     name: "AWS",
-    icon: aws,
+    icon: AWS,
   },
   {
     name: "MySql",
-    icon: mysql,
+    icon: MYSQL,
   },
 ];
 
@@ -187,7 +165,7 @@ const experiences = [
   {
     title: "Amazon Future Engineer Intern",
     company_name: "Amazon Web Services (AWS)",
-    icon: amazonwebservices,
+    icon: AMAZONWEBSERVICES,
     iconBg: "#383E56",
     date: "Jun 2024 - Aug 2024",
     points: [
@@ -211,7 +189,7 @@ const experiences = [
   {
     title: "Software Development Engineer Intern",
     company_name: "Amazon Web Services (AWS)",
-    icon: amazonwebservices,
+    icon: AMAZONWEBSERVICES,
     iconBg: "#383E56",
     date: "Jun 2025 - Aug 2025",
     points: [
@@ -222,7 +200,7 @@ const experiences = [
   {
     title: "Software Development Engineer Intern",
     company_name: "Amazon Web Services (AWS)",
-    icon: amazonwebservices,
+    icon: AMAZONWEBSERVICES,
     iconBg: "#383E56",
     date: "Jun 2026 - Aug 2026",
     points: [
@@ -232,9 +210,6 @@ const experiences = [
     ],
   },
 ];
-
-const placeholderImage =
-  "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMmEyYTJlIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjQjI2QkQ5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UHJvamVjdCBQSFg8L3RleHQ+PC9zdmc+";
 
 const projects = [
   {
@@ -259,7 +234,7 @@ const projects = [
         color: "cyan-text-gradient",
       },
     ],
-    image: placeholderImage,
+    image: PLACEHOLDER_IMAGE,
     source_code_link: "https://github.com/SamuelIVX/interleave",
   },
   {
@@ -292,7 +267,7 @@ const projects = [
         color: "yellow-text-gradient",
       },
     ],
-    image: paycore,
+    image: PAYCORE,
     source_code_link: "https://github.com/SamuelIVX/paycore",
     live_demo_link: "https://paycorehq.vercel.app/",
   },
@@ -326,7 +301,7 @@ const projects = [
         color: "cyan-text-gradient",
       },
     ],
-    image: clarify,
+    image: CLARIFY,
     source_code_link: "https://github.com/SamuelIVX/clarify",
     live_demo_link: "https://clarify-study.vercel.app/",
   },
@@ -356,7 +331,7 @@ const projects = [
         color: "yellow-text-gradient",
       },
     ],
-    image: ecommerce,
+    image: ECOMMERCE,
     source_code_link: "https://github.com/SamuelIVX/ecommerceWebsite",
   },
   {
@@ -385,7 +360,7 @@ const projects = [
         color: "yellow-text-gradient",
       },
     ],
-    image: carwash,
+    image: CARWASH,
     source_code_link: "https://github.com/SamuelIVX/car_Wash_Simulation",
   },
   {
@@ -422,7 +397,7 @@ const projects = [
         color: "blue-text-gradient",
       },
     ],
-    image: deltabase,
+    image: DELTABASE,
     source_code_link: "https://github.com/SamuelIVX/Deltabase",
   },
   {
@@ -467,7 +442,7 @@ const projects = [
         color: "purple-text-gradient",
       },
     ],
-    image: foodsense,
+    image: FOODSENSE,
     source_code_link: "https://github.com/SamuelIVX/FoodSense",
   },
 ];
@@ -477,4 +452,4 @@ const projects = [
  * @example
  * import { projects } from '../constants';
  */
-export { services, technologies, experiences, projects };
+export { technologies, experiences, projects };

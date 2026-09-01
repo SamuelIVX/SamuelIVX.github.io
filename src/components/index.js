@@ -22,4 +22,4 @@ export {
   ComputersCanvas, 
   StarsCanvas,
   GradientBackground,
-}
+};
