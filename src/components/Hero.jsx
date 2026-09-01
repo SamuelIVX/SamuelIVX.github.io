@@ -4,7 +4,7 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
-import herobg from "../assets/herobg.png";
+import { HEROBG } from "../assets";
 
 /**
  * Landing hero section shown under the fixed Navbar.
@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <section
       className="relative w-full h-screen mx-auto"
-      style={{ backgroundImage: `url(${herobg})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
+      style={{ backgroundImage: `url(${HEROBG})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
     >
       <div
         className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5 z-10 pointer-events-none`}

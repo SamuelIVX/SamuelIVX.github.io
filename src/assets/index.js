@@ -1,84 +1,89 @@
 /**
- * Asset barrel — logo, service/tech icons, company marks, and project images
- * imported as Vite URL modules and re-exported for constants and UI.
+ * Asset barrel — UI icons, tech stack marks, company logos, and project
+ * screenshots imported as Vite URL modules and re-exported.
+ *
+ * Naming convention: React components are PascalCase; non-component
+ * re-exports (asset URLs, constants) are UPPER_CASE to signal they are
+ * opaque build-time values, not part of the component tree.
  */
-import logo from "./logo.png";
-import backend from "./backend.png";
-import creator from "./creator.png";
-import mobile from "./mobile.png";
-import web from "./web.png";
-import github from "./github.png";
-import menu from "./menu.svg";
-import close from "./close.svg";
 
-import paycore from "./paycore.png";
-import clarify from "./clarify.png";
+// UI / navigation
+import LOGO from "./logo.png";
+import MENU from "./menu.svg";
+import CLOSE from "./close.svg";
+import GITHUB from "./github.png";
 
-import css from "./tech/css.png";
-import python from "./tech/python.svg";
-import git from "./tech/git.png";
-import html from "./tech/html.png";
-import javascript from "./tech/javascript.png";
-import nodejs from "./tech/nodejs.png";
-import reactjs from "./tech/reactjs.png";
-import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
-import java from "./tech/java.webp";
-import c from "./tech/c++.png";
-import aws from "./tech/aws.jpeg";
-import mysql from "./tech/mysql.png";
+// Tech stack icons
+import CSS from "./tech/css.png";
+import PYTHON from "./tech/python.svg";
+import GIT from "./tech/git.png";
+import HTML from "./tech/html.png";
+import JAVASCRIPT from "./tech/javascript.png";
+import NODEJS from "./tech/nodejs.png";
+import REACTJS from "./tech/reactjs.png";
+import TAILWIND from "./tech/tailwind.png";
+import TYPESCRIPT from "./tech/typescript.png";
+import THREEJS from "./tech/threejs.svg";
+import JAVA from "./tech/java.webp";
+import C from "./tech/c++.png";
+import AWS from "./tech/aws.jpeg";
+import MYSQL from "./tech/mysql.png";
+import NEXTJS from "./tech/nextjs.svg";
+import SUPABASE from "./tech/supabase.svg";
+import POSTGRESQL from "./tech/postgresql.svg";
+import VERCEL from "./tech/vercel.svg";
+import MAVEN from "./tech/maven.svg";
+import MOTION from "./tech/motion.svg";
 
-import nextjs from "./tech/nextjs.svg";
-import supabase from "./tech/supabase.svg";
-import postgresql from "./tech/postgresql.svg";
-import vercel from "./tech/vercel.svg";
-import maven from "./tech/maven.svg";
-import motion from "./tech/motion.svg";
-
+// Company / employer icons
 import AOT from "./company/aot.jpeg";
-import amazonwebservices from "./company/amazonwebservices.jpeg";
+import AMAZONWEBSERVICES from "./company/amazonwebservices.jpeg";
 
-import carwash from "./carwash.png";
-import ecommerce from "./ecommerce.png";
-import deltabase from "./deltabase.png";
-import foodsense from "./foodsense.png";
+// Project screenshots
+import HEROBG from "./hero/herobg.png";
+import PAYCORE from "./projects/paycore.png";
+import CLARIFY from "./projects/clarify.png";
+import ECOMMERCE from "./projects/ecommerce.png";
+import CARWASH from "./projects/carwash.png";
+import DELTABASE from "./projects/deltabase.png";
+import FOODSENSE from "./projects/foodsense.png";
 
 export {
-  logo,
-  backend,
-  creator,
-  mobile,
-  web,
-  github,
-  menu,
-  close,
-  paycore,
-  clarify,
-  css,
-  python,
-  git,
-  html,
-  javascript,
-  nodejs,
-  reactjs,
-  tailwind,
-  typescript,
-  threejs,
-  java,
-  c,
-  aws,
-  mysql,
-  nextjs,
-  supabase,
-  postgresql,
-  vercel,
-  maven,
-  motion,
+  // UI / navigation
+  LOGO,
+  MENU,
+  CLOSE,
+  GITHUB,
+  // Tech
+  CSS,
+  PYTHON,
+  GIT,
+  HTML,
+  JAVASCRIPT,
+  NODEJS,
+  REACTJS,
+  TAILWIND,
+  TYPESCRIPT,
+  THREEJS,
+  JAVA,
+  C,
+  AWS,
+  MYSQL,
+  NEXTJS,
+  SUPABASE,
+  POSTGRESQL,
+  VERCEL,
+  MAVEN,
+  MOTION,
+  // Company
   AOT,
-  amazonwebservices,
-  carwash,
-  ecommerce,
-  deltabase,
-  foodsense,
+  AMAZONWEBSERVICES,
+  // Projects / hero
+  HEROBG,
+  PAYCORE,
+  CLARIFY,
+  ECOMMERCE,
+  CARWASH,
+  DELTABASE,
+  FOODSENSE,
 };

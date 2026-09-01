@@ -7,7 +7,7 @@ import { useState, useEffect, useRef } from "react";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { logo, menu, close } from "../assets";
+import { LOGO, MENU, CLOSE } from "../assets";
 
 /**
  * LinkedIn icon as inline SVG.
@@ -88,7 +88,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
+          <img src={LOGO} alt="logo" className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex gap-1">
             <span>Samuel</span>
             <span className="hidden sm:inline">Hernandez Balderas</span>
@@ -130,7 +130,7 @@ const Navbar = () => {
         </ul>
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <img
-            src={toggle ? close : menu}
+            src={toggle ? CLOSE : MENU}
             alt="menu"
             className="w-[28px] h-[28px] object-contain cursor-pointer"
             onClick={() => setToggle(!toggle)}
