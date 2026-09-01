@@ -1,5 +1,6 @@
 /**
- * Barrel re-exports for 3D canvas components used by Hero and Contact.
+ * Barrel re-exports for Canvas 2D and 3D canvas components used by
+ * Hero, Contact, and middle sections.
  */
 import EarthCanvas from "./Earth";
 import ComputersCanvas from "./Computers";

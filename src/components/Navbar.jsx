@@ -8,6 +8,7 @@ import { useState, useEffect, useRef } from "react";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { LOGO, MENU, CLOSE } from "../assets";
+import NavLinks from "./NavLinks";
 
 /**
  * LinkedIn icon as inline SVG.
@@ -95,17 +96,7 @@ const Navbar = () => {
           </p>
         </a>
         <ul className="list-none hidden sm:flex flex-row gap-10">
-          {navLinks.map((link) => (
-            <li
-              key={link.id}
-              className={`${
-                active === link.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(link.title)}
-            >
-              <a href={`#${link.id}`}>{link.title}</a>
-            </li>
-          ))}
+          <NavLinks navLinks={navLinks} active={active} onNavClick={setActive} />
           <li
             className={`${
               active === "Resume" ? "text-white" : "text-secondary"
@@ -138,27 +129,22 @@ const Navbar = () => {
             aria-expanded={toggle}
             aria-controls="mobile-menu"
           />
-          <div
+<div
             id="mobile-menu"
             className={`${
               !toggle ? "hidden" : "flex "
             } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w[140px] z-10 rounded-xl`}
           >
             <ul className="list-none flex justify-end items-start flex-col gap-4">
-              {navLinks.map((link) => (
-                <li
-                  key={link.id}
-                  className={`${
-                    active === link.title ? "text-white" : "text-secondary"
-                  } font-poppins font-medium cursor-pointer text-[16px]`}
-                  onClick={() => {
-                    setToggle(!toggle);
-                    setActive(link.title);
-                  }}
-                >
-                  <a href={`#${link.id}`}>{link.title}</a>
-                </li>
-              ))}
+              <NavLinks
+                navLinks={navLinks}
+                active={active}
+                onNavClick={(title /*, id */) => {
+                  setActive(title);
+                  setToggle(false);
+                }}
+                isMobile={true}
+              />
               <li
                 className={`${
                   active === "Resume" ? "text-white" : "text-secondary"
