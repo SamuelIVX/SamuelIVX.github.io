@@ -39,7 +39,7 @@ without a matching task. No new skill install was necessary.
       reachability and versions. Verify archived content/resume and authority, generate single production content
       module. Apply ponytail/codebase-design/React/dependency guidance. Do not guess runtime versions from the
       prototype.
-- [ ] **01: Port the approved shell/design.** Replace the old hero/navigation/about/contact/footer with B, retaining
+- [x] **01: Port the approved shell/design.** Replace the old hero/navigation/about/contact/footer with B, retaining
       native hash links and fluid layout. Tests cover viewport, left alignment, nav/menu and footer text. Apply
       frontend-design/React/web-design-guidelines. The diagrammed spacing-reduction/ASCII ideas were suggestions, not
       approved additions.

@@ -1,61 +1,21 @@
-/**
- * Full-viewport hero with intro copy, ComputersCanvas, and a scroll cue to #about.
- */
-import { motion } from "framer-motion";
-import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
-import { HEROBG } from "../assets";
 
-/**
- * Landing hero section shown under the fixed Navbar.
- * @returns {JSX.Element} Hero copy and ComputersCanvas.
- * @example
- * <Hero />
- */
-const Hero = () => {
+import { motion } from 'framer-motion';
+import { Icon } from './ui/Icon';
+import { External } from './ui/External';
+
+export default function Hero() {
   return (
-    <section
-      className="relative w-full h-screen mx-auto"
-      style={{ backgroundImage: `url(${HEROBG})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
-    >
-      <div
-        className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5 z-10 pointer-events-none`}
-      >
-        <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#915eff]" />
-          <div className="w-1 sm:h-80 h-40 violet-gradient" />
+    <section className="hero" aria-label="Introduction">
+      <motion.div className="hero-inner" initial={{ opacity: 0.2, y: 12, filter: 'blur(3px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} transition={{ duration: 2.6, ease: [0.22, 1, 0.36, 1] }}>
+        <div className="hero-identity"><p className="greeting">Hello World, I&apos;m...</p>
+          <h1 className="hero-name" aria-label="Samuel Hernandez Balderas."><span aria-hidden="true">Samuel</span><span aria-hidden="true">Hernandez</span><span aria-hidden="true">Balderas.</span></h1>
+          <div className="hero-actions"><a className="primary-button" href="#projects">Explore my work<Icon name="down" /></a><External href="/assets/resume.pdf">Resume</External></div>
         </div>
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I&apos;m <span className="text-[#915eff]">Samuel</span>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I am a software engineer skilled in creating applications and
-            optimizing processes across domains.{" "}
-            <br className="sm:block hidden" />
-          </p>
+        <div className="hero-aside">
+          <p className="profession">Software engineer <span>&amp; web developer.</span></p>
+          <p className="hero-story">I build web applications and tools for understanding complex systems. Three summers in <strong>AWS Billing</strong> shaped my focus on performance, reliability, and <strong>end-to-end ownership</strong>.</p>
         </div>
-      </div>
-      <ComputersCanvas />
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
-        <a href="#about" aria-label="Scroll to about section">
-          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="w-3 h-3 rounded-full bg-secondary mb-1"
-            />
-          </div>
-        </a>
-      </div>
+      </motion.div>
     </section>
   );
-};
-
-export default Hero;
+}

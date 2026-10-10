@@ -1,185 +1,66 @@
-/**
- * Fixed top navigation — brand link plus desktop/mobile hash links from
- * `navLinks`. Uses IntersectionObserver to highlight the active section
- * as the user scrolls. Click handlers provide instant feedback.
- */
-import { useState, useEffect, useRef } from "react";
 
-import { styles } from "../styles";
-import { navLinks } from "../constants";
-import { LOGO, MENU, CLOSE } from "../assets";
-import NavLinks from "./NavLinks";
+import { useState, useRef, useEffect } from 'react';
+import { Icon } from './ui/Icon';
 
-/**
- * LinkedIn icon as inline SVG.
- * @returns {JSX.Element} LinkedIn SVG icon.
- */
-const LinkedInIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-  </svg>
-);
+const sections = [['about', 'About'], ['projects', 'Projects'], ['work', 'Experience'], ['honors', 'Honors'], ['contact', 'Contact']];
 
-/**
- * Portfolio navbar with mobile hamburger drawer.
- * IntersectionObserver tracks scroll position to highlight the active section.
- * @returns {JSX.Element} Fixed top navigation.
- * @example
- * <Navbar />
- */
-const Navbar = () => {
-  const [active, setActive] = useState("");
-  const [toggle, setToggle] = useState(false);
-  const ratiosRef = useRef(new Map());
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState('');
+  const menu = useRef(null);
+
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const id = entry.target.id;
+    let ticking = false;
+    const observer = new IntersectionObserver(entries => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        let best = active;
+        for (const entry of entries) {
           if (entry.isIntersecting) {
-            ratiosRef.current.set(id, entry.intersectionRatio);
-          } else {
-            ratiosRef.current.delete(id);
-          }
-        });
-
-        let bestId = "";
-        let bestRatio = 0;
-        for (const [id, ratio] of ratiosRef.current) {
-          if (ratio > bestRatio) {
-            bestRatio = ratio;
-            bestId = id;
+            best = entry.target.id;
+            if (entry.intersectionRatio > 0.5) break;
           }
         }
+        if (best !== active) setActive(best);
+        ticking = false;
+      });
+    }, { threshold: [0, 0.5, 1], rootMargin: '-76px 0px -20% 0px' });
 
-        if (bestId) {
-          const link = navLinks.find((l) => l.id === bestId);
-          if (link) setActive(link.title);
-        } else {
-          setActive("");
-        }
-      },
-      {
-        threshold: [0, 0.1, 0.2, 0.3, 0.5, 0.7, 1],
-        rootMargin: "-60px 0px -20% 0px",
-      }
-    );
-
-    navLinks.forEach((link) => {
-      const el = document.getElementById(link.id);
+    sections.forEach(([id]) => {
+      const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [active]);
+
+  useEffect(() => {
+    const keydown = event => {
+      if (event.key === 'Escape' && menuOpen) {
+        setMenuOpen(false);
+        menu.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', keydown);
+    return () => document.removeEventListener('keydown', keydown);
+  }, [menuOpen]);
 
   return (
-    <>
-      <a href="#main-content" className="skip-to-content">Skip to content</a>
-      <nav
-        className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
-      >
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-        <a
-          href="/"
-          className="flex items-center gap-2"
-          onClick={() => {
-            setActive("");
-            window.scrollTo(0, 0);
-          }}
-        >
-          <img src={LOGO} alt="logo" className="w-9 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex gap-1">
-            <span>Samuel</span>
-            <span className="hidden sm:inline">Hernandez Balderas</span>
-          </p>
-        </a>
-        <ul className="list-none hidden sm:flex flex-row gap-10">
-          <NavLinks navLinks={navLinks} active={active} onNavClick={setActive} />
-          <li
-            className={`${
-              active === "Resume" ? "text-white" : "text-secondary"
-            } hover:text-white text-[18px] font-medium cursor-pointer`}
-            onClick={() => setActive("Resume")}
-          >
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              Resume
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/samuelhb/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-secondary hover:text-white"
-              aria-label="LinkedIn"
-            >
-              <LinkedInIcon />
-            </a>
-          </li>
-        </ul>
-        <div className="sm:hidden flex flex-1 justify-end items-center">
-          <img
-            src={toggle ? CLOSE : MENU}
-            alt="menu"
-            className="w-[28px] h-[28px] object-contain cursor-pointer"
-            onClick={() => setToggle(!toggle)}
-            aria-label="Toggle menu"
-            aria-expanded={toggle}
-            aria-controls="mobile-menu"
-          />
-<div
-            id="mobile-menu"
-            className={`${
-              !toggle ? "hidden" : "flex "
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w[140px] z-10 rounded-xl`}
-          >
-            <ul className="list-none flex justify-end items-start flex-col gap-4">
-              <NavLinks
-                navLinks={navLinks}
-                active={active}
-                onNavClick={(title /*, id */) => {
-                  setActive(title);
-                  setToggle(false);
-                }}
-                isMobile={true}
-              />
-              <li
-                className={`${
-                  active === "Resume" ? "text-white" : "text-secondary"
-                } font-poppins font-medium cursor-pointer text-[16px]`}
-                onClick={() => {
-                  setToggle(!toggle);
-                  setActive("Resume");
-                }}
-              >
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Resume
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/samuelhb/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-secondary hover:text-white"
-                  aria-label="LinkedIn"
-                >
-                  <LinkedInIcon />
-                </a>
-              </li>
-            </ul>
-          </div>
+    <header className="header">
+      <div className="header-inner">
+        <a href="#main" className="brand" aria-label="Samuel Hernandez Balderas, back to top"><span className="brand-at">@</span><span>samhb</span></a>
+        <button className="menu-toggle" ref={menu} aria-expanded={menuOpen} aria-controls="navigation" onClick={() => setMenuOpen(!menuOpen)}>Menu</button>
+        <nav id="navigation" className={menuOpen ? 'nav open' : 'nav'} aria-label="Main navigation">
+          {sections.map(([id, label]) => <a key={id} href={`#${id}`} aria-current={active === id ? 'location' : undefined} onClick={() => setMenuOpen(false)}>{label}</a>)}
+        </nav>
+        <div className="header-controls">
+          <a href="https://www.linkedin.com/in/samuelhb/" className="icon-button" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><Icon name="linkedin" /></a>
+          <a href="https://github.com/SamuelIVX" className="icon-button" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><Icon name="github" /></a>
+          <button className="icon-button theme-toggle" aria-label="Switch theme" title="Switch theme"><Icon name="moon" /></button>
         </div>
       </div>
-    </nav>
-    </>
+    </header>
   );
-};
-
-export default Navbar;
+}

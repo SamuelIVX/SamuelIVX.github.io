@@ -1,42 +1,13 @@
-/**
- * About / Overview section — intro copy plus bio paragraph.
- * Exported as SectionWrapper(About, "about").
- */
-import { motion } from "framer-motion";
-import { styles } from "../styles";
-import { fadeIn, textVariant } from "../utils/motion";
-import { SectionWrapper } from "../hoc";
 
-/**
- * Overview heading and bio paragraph.
- * @returns {JSX.Element} About section body (wrapped by SectionWrapper).
- * @example
- * // Exported as SectionWrapper(About, "about")
- * <About />
- */
-const About = () => {
+export default function About() {
   return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>About Me</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
-      </motion.div>
-
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className={styles.sectionBody}
-      >
-        I&apos;m Samuel Hernandez Balderas — a senior at the College of Staten Island
-        majoring in Computer Science with a minor in Mathematics. I&apos;ve spent
-        three summers as an SDE Intern at AWS, all within the AWS Billing Org, where
-        I built scalable end-to-end projects that deliver seamless solutions to
-        customers and internal engineers. Outside of code, I tinker with PCs, read
-        manga, and collect figurines and comics. Most of all, I enjoy building
-        projects that solve real-world problems.
-      </motion.p>
-    </>
+    <section className="section about" id="about">
+      <div className="section-heading" data-reveal><p className="eyebrow">Beyond the Resume</p><h2>A little about me.</h2></div>
+      <div className="about-body" data-reveal>
+        <p className="lead">I enjoy building useful software and understanding what makes it work.</p>
+        <p>I&apos;m a <strong>computer science senior</strong> at the College of Staten Island, with a minor in mathematics. Away from the keyboard, I&apos;m usually at the gym, tinkering with PCs, reading manga, or adding to my figurine and comic collection.</p>
+        <div className="skills">{[['Languages', 'Java, TypeScript, Python, C++'], ['Applications', 'React, Next.js, Node.js, Tailwind'], ['Data & infrastructure', 'AWS, PostgreSQL, Supabase, Vercel'], ['Tools', 'Git, Maven']].map(([title, text]) => <div key={title}><h3>{title}</h3><p>{text}</p></div>)}</div>
+      </div>
+    </section>
   );
-};
-
-const AboutComponent = SectionWrapper(About, "about");
-export default AboutComponent;
+}
