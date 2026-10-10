@@ -34,7 +34,7 @@ without a matching task. No new skill install was necessary.
 
 ## Phase checklist
 
-- [ ] **00: Establish baseline and content.** Use supported Node matching CI, clean npm ci, record npm ls actual
+- [x] **00: Establish baseline and content.** Use supported Node matching CI, clean npm ci, record npm ls actual
       versions, baseline lint/test/build. Triage six reported high-severity install advisories with npm audit output,
       reachability and versions. Verify archived content/resume and authority, generate single production content
       module. Apply ponytail/codebase-design/React/dependency guidance. Do not guess runtime versions from the
