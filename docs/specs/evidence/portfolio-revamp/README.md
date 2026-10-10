@@ -16,3 +16,17 @@ This evidence covers spec authoring only. Production behavior/security/performan
   advisories. Those are explicit phase-00/05 prerequisites, not triaged findings in this planning task.
 - Production lint/tests/build, vulnerability triage, Lighthouse/device/assistive-technology checks and deployment were
   not run for this documentation-only change. No production source/config implementation was edited.
+
+## License correction review
+
+The PR requested precise React Bits license guidance. The corrected spec preserves the restriction on the components
+themselves and the permission for normal portfolio use, with required upstream notices. Markdown lint passed across
+all 12 Markdown files.
+
+CodeRabbit follow-up: review_completed, one minor finding, outcome completed. Full result:
+[license-review.ndjson](license-review.ndjson). The finding proposed replacing the upstream custom restriction with a
+standard Commons Clause value-derived-products formulation. It was not applied: direct inspection of the
+[pinned upstream license](https://github.com/DavidHDev/react-bits/blob/26cf51f7874aeb31aa9eb463648f3221865dbc11/LICENSE.md)
+confirmed the component-specific selling/sublicensing/redistribution wording already recorded in the spec. The
+upstream also permits embedding in applications, websites and products; the spec retains normal portfolio use.
+This is a source-specific documentation correction, not a legal certification or universal Commons Clause summary.

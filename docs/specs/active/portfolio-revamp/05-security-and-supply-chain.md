@@ -60,8 +60,9 @@ meta if required. HTTPS and mixed-content checks required.
 Audit from lockfile with npm audit --json plus existing Dependency Review/SBOM/CodeQL/gitleaks; distinguish dev vs
 shipped reachability and copy-source vulnerabilities. No automatic force upgrades or disabled security checks. Remove
 Three/Fiber/Drei/maath/EmailJS only after import/config/public asset ownership checks and passing replacement tests.
-Keep maintainable license attribution for DotGrid; React Bits Commons Clause restricts reselling components, not normal
-portfolio use.
+Keep maintainable license attribution for DotGrid. The pinned components use MIT + Commons Clause License Condition
+v1.0, which prohibits selling, sublicensing or redistributing the components themselves, whether standalone, bundled
+or ported. Normal portfolio use is allowed; retain the upstream copyright and license notices.
 
 ## Current State
 
