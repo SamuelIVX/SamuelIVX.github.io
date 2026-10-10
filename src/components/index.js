@@ -1,6 +1,3 @@
-/**
- * Barrel re-exports for portfolio sections and canvas components.
- */
 import { EarthCanvas, ComputersCanvas, StarsCanvas, GradientBackground } from './canvas';
 import Hero from './Hero';
 import Navbar from './Navbar';
@@ -9,6 +6,8 @@ import Tech from './Tech';
 import Experience from './Experience';
 import Works from './Works';
 import Contact from './Contact';
+import Footer from './Footer';
+import Honors from './Honors';
 
 export {
   Hero,
@@ -18,6 +17,8 @@ export {
   Experience,
   Works,
   Contact,
+  Footer,
+  Honors,
   EarthCanvas, 
   ComputersCanvas, 
   StarsCanvas,

@@ -1,41 +1,35 @@
-/**
- * Root portfolio layout — section stack without client-side routing.
- * (Navbar → Hero → About → Experience → Tech → Works → Contact + StarsCanvas).
- */
 import {
+  Honors,
   About,
   Contact,
   Experience,
   Hero,
   Navbar,
-  Tech,
   Works,
+  Footer,
   StarsCanvas,
-  GradientBackground,
+  GradientBackground
 } from "./components";
 
-/**
- * Single-page portfolio shell with hash-section navigation.
- * @returns {JSX.Element} The portfolio layout.
- * @example
- * // Mounted from main.jsx via createRoot(...).render(<App />)
- * <App />
- */
 const App = () => {
   return (
-    <div id="main-content" className="relative z-0 bg-primary">
+    <div className="portfolio variant-B relative z-0 bg-primary">
+      <a className="skip-link" href="#main">Skip to content</a>
       <Navbar />
-      <Hero />
-      <GradientBackground>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-      </GradientBackground>
-      <div className="relative z-0">
-        <Contact />
-        <StarsCanvas />
-      </div>
+      <main id="main" tabIndex="-1">
+        <Hero />
+        <GradientBackground>
+          <About />
+          <Works />
+          <Experience />
+          <Honors />
+        </GradientBackground>
+        <div className="relative z-0">
+          <Contact />
+          <StarsCanvas />
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 };

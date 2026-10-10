@@ -43,7 +43,7 @@ without a matching task. No new skill install was necessary.
       native hash links and fluid layout. Tests cover viewport, left alignment, nav/menu and footer text. Apply
       frontend-design/React/web-design-guidelines. The diagrammed spacing-reduction/ASCII ideas were suggestions, not
       approved additions.
-- [ ] **02: Port content browsing.** Build carousel and experience tabs with named keyboard/focus/empty/many regression
+- [x] **02: Port content browsing.** Build carousel and experience tabs with named keyboard/focus/empty/many regression
       cases; show all honors. Keep complete resume copy and immediate tab state. Apply
       frontend-design/React/webapp-testing. Replace old contact-form-specific tests only with explicit
       mailto/removed-network contract tests; preserve unrelated coverage.
