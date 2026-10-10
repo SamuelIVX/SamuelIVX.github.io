@@ -1,6 +1,7 @@
 # Personal Portfolio Website
 
-A responsive personal portfolio website featuring interactive 3D graphics and a Canvas 2D background implementation to showcase engineering projects, skills, and professional experience.
+A responsive personal portfolio website featuring interactive 3D graphics and a Canvas 2D background implementation to
+showcase engineering projects, skills, and professional experience.
 
 This repository automatically deploys to GitHub Pages via a shared CI workflow.
 
@@ -17,17 +18,20 @@ This repository automatically deploys to GitHub Pages via a shared CI workflow.
 ## Tech Stack
 
 ### Frontend
+
 - **React 18.3**
 - **Vite**
 - **Tailwind CSS**
 - **PostCSS**
 
 ### 3D & Graphics
+
 - **Three.js**
 - **@react-three/fiber**
 - **@react-three/drei**
 
 ### Animation & Interaction
+
 - **Framer Motion**
 - **React Tilt**
 - **React Vertical Timeline Component**
@@ -37,7 +41,7 @@ This repository automatically deploys to GitHub Pages via a shared CI workflow.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/SamuelIVX/SamuelIVX.github.io.git
+git clone <https://github.com/SamuelIVX/SamuelIVX.github.io.git>
 cd SamuelIVX.github.io
 ```
 
@@ -63,10 +67,20 @@ VITE_APP_EMAILJS_PUBLIC_KEY=your_public_key
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open [<http://localhost:5173](http://localhost:5173)> in your browser.
 
 ## Deployment
 
-This repository is configured with a GitHub Actions workflow template that automatically builds the Vite application and deploys the `dist/` output to GitHub Pages on every push to `main`. 
+This repository is configured with a GitHub Actions workflow template that automatically builds the Vite application and
+deploys the `dist/` output to GitHub Pages on every push to `main`.
 
-The user's resume is hosted statically in the `public/resume.pdf` directory and served natively alongside the application.
+The user's resume is hosted statically in the `public/resume.pdf` directory and served natively alongside the
+application.
+
+## Approved portfolio revamp specifications
+
+The live application above remains the current implementation. The approved redesign is specified in [Portfolio revamp
+spec set](docs/specs/active/portfolio-revamp/README.md), with seven ordered specifications, [implementation plan and
+installed skill register](docs/specs/active/portfolio-revamp/IMPLEMENTATION-PLAN.md), and a [durable prototype
+reference](docs/specs/reference/portfolio-revamp/README.md). Performance/security gates are planned, not achieved
+production results. This spec-writing change does not deploy the redesign.
