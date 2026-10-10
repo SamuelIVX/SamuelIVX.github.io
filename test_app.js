@@ -1,31 +1,14 @@
-/**
- * Smoke tests for primary portfolio sections, nav anchors, contact form field
- * state, and an initial axe accessibility scan. Canvas modules are mocked to
- * avoid WebGL under jsdom.
- */
-import { render, screen, within } from "@testing-library/react";
-import { axe } from "jest-axe";
-import { describe, expect, it, vi } from "vitest";
-import App from "./App";
+import { readFileSync, writeFileSync } from 'fs';
 
-vi.mock("./components/canvas/DotGrid.jsx", () => ({ default: () => <div data-testid="dot-grid" /> }));
+let content = readFileSync('src/App.test.jsx', 'utf8');
 
-
-/**
- * Renders the full App under Testing Library.
- * @returns {import("@testing-library/react").RenderResult} RTL render result.
- * @example
- * const { container } = renderApp();
- */
-const renderApp = () => render(<App />);
-
-describe("App", () => {
+const newTests = `describe("App", () => {
   it("renders the primary portfolio sections", () => {
     renderApp();
 
-    expect(screen.getByText(/hello world, i'm\.\.\./i)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /a little about me\./i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /let's talk\./i })).toBeInTheDocument();
+    expect(screen.getByText(/hello world, i'm\\.\\.\\./i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /a little about me\\./i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /let's talk\\./i })).toBeInTheDocument();
   });
 
   it("renders navigation links to the main sections", async () => {
@@ -44,7 +27,7 @@ describe("App", () => {
 
   it("has a mailto link for contact", () => {
     renderApp();
-    const mailto = screen.getByRole("link", { name: /samuel05\.hb@gmail\.com/i });
+    const mailto = screen.getByRole("link", { name: /samuel05\\.hb@gmail\\.com/i });
     expect(mailto).toHaveAttribute("href", "mailto:samuel05.hb@gmail.com");
   });
 
@@ -54,3 +37,7 @@ describe("App", () => {
     expect(results).toHaveNoViolations();
   });
 });
+`;
+
+content = content.replace(/describe\("App", \(\) => \{[\s\S]*\}\);\n/, newTests);
+writeFileSync('src/App.test.jsx', content);

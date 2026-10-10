@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, lazy, Suspense } from 'react';
 import { flushSync } from 'react-dom';
 import {
   About,
@@ -11,7 +11,7 @@ import {
   Honors
 } from "./components";
 import useReducedMotion from './hooks/useReducedMotion.js';
-import DotGrid from './components/canvas/DotGrid.jsx';
+const DotGrid = lazy(() => import('./components/canvas/DotGrid.jsx'));
 
 const App = () => {
   const [theme, setTheme] = useState(() => document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
@@ -62,13 +62,15 @@ const App = () => {
   return (
     <div className="portfolio variant-B relative z-0 bg-primary">
       <div className="ambient-background" aria-hidden="true">
-        <DotGrid 
+        <Suspense fallback={null}>
+          <DotGrid 
           dotSize={3} gap={10} proximity={170} tension={0.55} swell={1.2} glow={0.6} 
           baseColor={theme === 'dark' ? '#465B70' : '#8B9CA9'} 
           activeColor={theme === 'dark' ? '#9AC7D6' : '#326D83'} 
           opacity={theme === 'dark' ? 0.35 : 0.23} 
           mouseInteraction={!reduced} clickShock={!reduced} intro={!reduced} 
         />
+        </Suspense>
       </div>
       <a className="skip-link" href="#main">Skip to content</a>
       <Navbar theme={theme} switchTheme={switchTheme} />

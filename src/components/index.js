@@ -1,4 +1,3 @@
-import { EarthCanvas, ComputersCanvas, StarsCanvas, GradientBackground } from './canvas';
 import Hero from './Hero';
 import Navbar from './Navbar';
 import About from './About';
@@ -19,8 +18,4 @@ export {
   Contact,
   Footer,
   Honors,
-  EarthCanvas, 
-  ComputersCanvas, 
-  StarsCanvas,
-  GradientBackground,
 };

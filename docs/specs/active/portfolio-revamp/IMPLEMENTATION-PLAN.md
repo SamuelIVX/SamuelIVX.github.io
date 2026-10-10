@@ -51,7 +51,7 @@ without a matching task. No new skill install was necessary.
       reduced motion and stable lifecycle. Isolate upstream DotGrid, retain notices, audit local patches and failure
       cleanup. Apply React/frontend/OWASP/browser guidance. Match all linked dense settings and recognize idle
       settlement.
-- [ ] **04: Optimize and measure.** Defer background, self-host licensed font, optimize images, remove obsolete tutorial
+- [x] **04: Optimize and measure.** Defer background, self-host licensed font, optimize images, remove obsolete tutorial
       assets/imports/dependencies after ownership checks. Add deterministic gzip budget checks and
       Lighthouse/interaction evidence. Apply performance/React/refactor guidance. Compare approved screenshots after
       each coherent extraction/optimization; changes must pass tests before further work.
