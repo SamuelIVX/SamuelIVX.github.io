@@ -47,7 +47,7 @@ without a matching task. No new skill install was necessary.
       cases; show all honors. Keep complete resume copy and immediate tab state. Apply
       frontend-design/React/webapp-testing. Replace old contact-form-specific tests only with explicit
       mailto/removed-network contract tests; preserve unrelated coverage.
-- [ ] **03: Port persistent theme and motion.** One theme owner and before-paint startup path, button-origin wipe, live
+- [x] **03: Port persistent theme and motion.** One theme owner and before-paint startup path, button-origin wipe, live
       reduced motion and stable lifecycle. Isolate upstream DotGrid, retain notices, audit local patches and failure
       cleanup. Apply React/frontend/OWASP/browser guidance. Match all linked dense settings and recognize idle
       settlement.

@@ -4,7 +4,9 @@ import { Icon } from './ui/Icon';
 
 const sections = [['about', 'About'], ['projects', 'Projects'], ['work', 'Experience'], ['honors', 'Honors'], ['contact', 'Contact']];
 
-export default function Navbar() {
+import PropTypes from "prop-types";
+
+export default function Navbar({ theme, switchTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState('');
   const menu = useRef(null);
@@ -58,9 +60,14 @@ export default function Navbar() {
         <div className="header-controls">
           <a href="https://www.linkedin.com/in/samuelhb/" className="icon-button" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><Icon name="linkedin" /></a>
           <a href="https://github.com/SamuelIVX" className="icon-button" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><Icon name="github" /></a>
-          <button className="icon-button theme-toggle" aria-label="Switch theme" title="Switch theme"><Icon name="moon" /></button>
+          <button className="icon-button theme-toggle" onClick={switchTheme} aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`} title="Switch theme"><Icon name={theme === 'light' ? 'moon' : 'sun'} /></button>
         </div>
       </div>
     </header>
   );
 }
+
+Navbar.propTypes = {
+  theme: PropTypes.string,
+  switchTheme: PropTypes.func
+};

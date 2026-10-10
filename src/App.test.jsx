@@ -9,6 +9,8 @@ import { describe, expect, it, vi } from "vitest";
 import PropTypes from "prop-types";
 import App from "./App";
 
+vi.mock("./components/canvas/DotGrid.jsx", () => ({ default: () => <div data-testid="dot-grid" /> }));
+
 vi.mock("./components/canvas", () => {
   const GradientBackgroundMock = ({ children }) => <div data-testid="gradient-bg">{children}</div>;
   GradientBackgroundMock.propTypes = { children: PropTypes.node };
