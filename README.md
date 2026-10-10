@@ -70,3 +70,8 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 This repository is configured with a GitHub Actions workflow template that automatically builds the Vite application and deploys the `dist/` output to GitHub Pages on every push to `main`. 
 
 The user's resume is hosted statically in the `public/resume.pdf` directory and served natively alongside the application.
+
+
+## Approved portfolio revamp specifications
+
+The live application above remains the current implementation. The approved redesign is specified in [Portfolio revamp spec set](docs/specs/active/portfolio-revamp/README.md), with seven ordered specifications, [implementation plan and installed skill register](docs/specs/active/portfolio-revamp/IMPLEMENTATION-PLAN.md), and a [durable prototype reference](docs/specs/reference/portfolio-revamp/README.md). Performance/security gates are planned, not achieved production results. This spec-writing change does not deploy the redesign.

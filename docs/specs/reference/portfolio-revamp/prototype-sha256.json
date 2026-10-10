@@ -1,0 +1,23 @@
+{
+  "index.html": "10dd909f3703558fb4ebf1c7ed393862b013aaf509b80b11ded45bb3220aa241",
+  "package.json": "78dba7aa7136f91a365cf6240786dbfccc5f15106f6a00b99d86ba59dcd49c27",
+  "vite.config.js": "775bdbc2bf4d5598a22b7bbc649057d2e6611f3502a0ed74f6e8b5fc6c2e6cca",
+  "README.md": "39cd69992984bfc4ce8e4666d52eb9d7f8ddb613250bf600da020dcbf0760b1f",
+  "THIRD-PARTY-NOTICES.md": "5ab9443ec57000312950689adda6e5b0016b913ea31189b75f7103ae87a9d3f6",
+  "src/App.jsx": "11a558224fbb044dba85d379a9ab22784779ca617d807e5bf9d7a44412ff0200",
+  "src/components/BlurText.jsx": "3feae7dc746b8b16040ec2febc3d2f8e4576a08171b3e8d74f766c2fe138fa8e",
+  "src/components/DotGrid.css": "41da475e62d101909c5f958569214c38cf20441223059d07a3e56b4e9a176a51",
+  "src/components/DotGrid.jsx": "908efdabb69e6ec233e1fbc264f23ebbd38405132b7e665f3c6df2f0de5f671c",
+  "src/components/PatternWaves.css": "c7c446c11ac500c46ca02c44c084135c2eb7bd9597c73745db72f5b0469e7c92",
+  "src/components/PatternWaves.jsx": "52c6659b94634c6c5f1e8080f57ebd5f710c496c1a8459bd2a4833d28b9c8970",
+  "src/components/SpotlightCard.css": "b646b7da4bb46f0a4d819d0af275804c49a845a5c2dc848700aaf9282db13a92",
+  "src/components/SpotlightCard.jsx": "1321db10b44bd29940639bf334c0cf9fb2fc4c157f3fa7d811219de097b436f2",
+  "src/content.js": "b191f2dde7f5ca7731424d7d7801c5bbf08d7062370e90e02d0c8f3e57af7c64",
+  "src/main.jsx": "fa8e279e90b33e6d70b9ffea7f39818b51acf4773587ac88f6f4b9ce04389f09",
+  "src/style.css": "1c24b52cc49289cf492fdf1a39b33b0236a3f791a84f976220e167e1469c53d5",
+  "src/useReducedMotion.js": "f71620a0bd85bacaab15496431be6b7fea64b734b2b71e926f6e5c587a76aedb",
+  "public/assets/paycore.jpg": "28fc59e423cba60cbcd0ee15c364f20ddcf846167e82f0a9d871045c45e66a3d",
+  "public/assets/clarify.jpg": "c633429f01326bbbcd40095bdbf2c057fa2a1fa2166075174727537f8f5c4376",
+  "public/assets/foodsense.jpg": "6d3ce71a9d3785a2811a2a2e131f10ad05b91a16b949af63ca23b4a71cf8d5b5",
+  "public/assets/resume.pdf": "219f4b4de6feee8af7991bb5d874d745cbd55ec099872accbee6ecab11753d76"
+}
