@@ -55,7 +55,7 @@ without a matching task. No new skill install was necessary.
       assets/imports/dependencies after ownership checks. Add deterministic gzip budget checks and
       Lighthouse/interaction evidence. Apply performance/React/refactor guidance. Compare approved screenshots after
       each coherent extraction/optimization; changes must pass tests before further work.
-- [ ] **05: Harden actual surfaces.** Enforce tested CSP with appropriate GitHub Pages limits, remove unused EmailJS
+- [x] **05: Harden actual surfaces.** Enforce tested CSP with appropriate GitHub Pages limits, remove unused EmailJS
       configuration/network surface, retain explicit fixed URLs and only theme storage. Audit lockfile/advisories/copied
       licenses, observe production-preview network, run security checks. Apply OWASP/dependency/code-review; no
       hypothetical auth/database controls.
