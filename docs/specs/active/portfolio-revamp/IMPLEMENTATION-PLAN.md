@@ -59,7 +59,7 @@ without a matching task. No new skill install was necessary.
       configuration/network surface, retain explicit fixed URLs and only theme storage. Audit lockfile/advisories/copied
       licenses, observe production-preview network, run security checks. Apply OWASP/dependency/code-review; no
       hypothetical auth/database controls.
-- [ ] **06: Integrate and release.** Full lint/unit/build/browser/axe/performance/security gate under recorded
+- [x] **06: Integrate and release.** Full lint/unit/build/browser/axe/performance/security gate under recorded
       Node/tools; real device/VoiceOver/zoom pass. Require analyzed CodeRabbit completion, not ordinary review. Ensure
       deploy depends on required checks and uses their exact artifact. Keep generic workflow contracts. Prepare PR and
       previous-artifact rollback evidence, then deploy only when authorized and all gates pass; HTTP200 +

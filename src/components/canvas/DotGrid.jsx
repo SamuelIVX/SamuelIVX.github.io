@@ -118,6 +118,11 @@ const compile = (gl, type, source) => {
   const shader = gl.createShader(type);
   gl.shaderSource(shader, source);
   gl.compileShader(shader);
+  if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+    console.error(gl.getShaderInfoLog(shader));
+    gl.deleteShader(shader);
+    return null;
+  }
   return shader;
 };
 
@@ -185,10 +190,24 @@ const DotGrid = ({
     if (!gl) return;
 
     const program = gl.createProgram();
-    gl.attachShader(program, compile(gl, gl.VERTEX_SHADER, VERTEX));
-    gl.attachShader(program, compile(gl, gl.FRAGMENT_SHADER, FRAGMENT));
+    const vs = compile(gl, gl.VERTEX_SHADER, VERTEX);
+    const fsShader = compile(gl, gl.FRAGMENT_SHADER, FRAGMENT);
+    if (!vs || !fsShader) {
+      if (vs) gl.deleteShader(vs);
+      if (fsShader) gl.deleteShader(fsShader);
+      gl.deleteProgram(program);
+      return;
+    }
+    gl.attachShader(program, vs);
+    gl.attachShader(program, fsShader);
     gl.linkProgram(program);
-    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) return;
+    gl.deleteShader(vs);
+    gl.deleteShader(fsShader);
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+      console.error(gl.getProgramInfoLog(program));
+      gl.deleteProgram(program);
+      return;
+    }
 
     const uniforms = {};
     for (const name of [
@@ -576,6 +595,14 @@ const DotGrid = ({
     window.addEventListener('pointerout', onOut);
     window.addEventListener('blur', onLeave);
 
+    const onContextLost = event => {
+      event.preventDefault();
+      cancelAnimationFrame(raf);
+      raf = 0;
+      visible = false;
+    };
+    canvas.addEventListener('webglcontextlost', onContextLost, false);
+
     const resizeObserver = new ResizeObserver(() => {
       resize();
       wake();
@@ -632,6 +659,7 @@ const DotGrid = ({
       window.removeEventListener('pointerdown', onDown);
       window.removeEventListener('pointerout', onOut);
       window.removeEventListener('blur', onLeave);
+      canvas.removeEventListener('webglcontextlost', onContextLost, false);
       document.removeEventListener('visibilitychange', onVisibility);
       motionPreference.removeEventListener('change', onMotionPreference);
       gl.deleteBuffer(cornerBuffer);
