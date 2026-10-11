@@ -9,7 +9,11 @@
 
 - **`brace-expansion` (≤ 1.1.20) / `braces` (*)**: 6 high-severity vulnerabilities.
   - **Reachability:** Found within `eslint-plugin-react -> minimatch -> brace-expansion` and `gh-pages -> globby -> fast-glob -> micromatch -> braces`.
-  - **Disposition:** Both are strictly development dependencies used only locally/in CI for linting and publishing. They are not bundled into the production static application. The DoS vectors (via maliciously crafted strings) are not exploitable during standard portfolio build/deploy processes on trusted inputs. We will not forcefully resolve them via `npm audit fix --force` as that introduces breaking changes to `gh-pages`.
+  - **Disposition:** Both are strictly development dependencies used only locally/in CI
+    for linting and publishing. They are not bundled into the production static application.
+    The DoS vectors (via maliciously crafted strings) are not exploitable during standard
+    portfolio build/deploy processes on trusted inputs. We will not forcefully resolve
+    them via `npm audit fix --force` as that introduces breaking changes to `gh-pages`.
 
 ## Implementation Results
 
