@@ -51,7 +51,7 @@ export default function Experience({ reduced }) {
             </button>
           ))}
         </div>
-        <motion.div className="experience-panel" role="tabpanel" key={experience.id} id={`${prefix}-panel`} aria-labelledby={`${prefix}-tab-${experience.id}`} tabIndex={0} initial={reduced ? false : { opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reduced ? 0 : 1.4, ease: [0.4, 0, 0.2, 1] }}>
+        <motion.div className="experience-panel" role="tabpanel" key={experience.id} id={`${prefix}-panel`} aria-labelledby={`${prefix}-tab-${experience.id}`} tabIndex={0} initial={reduced ? false : { opacity: 0, transform: 'translateY(4px)' }} animate={{ opacity: 1, transform: 'translateY(0px)' }} transition={{ duration: reduced ? 0 : 1.4, ease: [0.4, 0, 0.2, 1] }}>
           <p className="eyebrow">{experience.company}</p>
           <h3>{experience.title}</h3>
           <p className="experience-date">{experience.date}</p>

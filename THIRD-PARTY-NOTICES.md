@@ -1,3 +1,5 @@
+# THIRD-PARTY-NOTICES
+
 MIT + Commons Clause License Condition v1.0
 
 React Bits: archived BlurText/SpotlightCard/PatternWaves, copied from

@@ -6,7 +6,7 @@ import { External } from './ui/External.jsx';
 function Schedule() {
   return <div className="schedule" role="img" aria-label="Illustrative interleaving of two threads, exploring their execution schedules">
     <div className="schedule-heading"><span>Interleave</span><span>Execution schedules</span></div>
-    {['A', 'B'].map((thread, row) => <div className="thread" key={thread}><span>Thread {thread}</span><div className="thread-track">{[0, 1, 2, 3, 4].map(column => <span key={column} className={(column + row) % 2 === 0 ? 'node filled' : 'node'} />)}</div></div>)}
+    {['A', 'B'].map((thread, row) => <div className="thread" key={thread}><span>Thread {thread}</span><div className="thread-track">{[0, 1, 2, 3, 4].map(column => <span key={`col-${column}`} className={(column + row) % 2 === 0 ? 'node filled' : 'node'} />)}</div></div>)}
     <div className="schedule-caption"><span className="status-dot" />Explore every possibility.</div>
   </div>;
 }
@@ -99,7 +99,7 @@ export default function Works() {
         </div>
         <div className="project-positions" role="group" aria-label="Project position">
           {Array.from({ length: maxStart + 1 }, (_, index) => (
-            <button type="button" key={index} aria-label={`Show projects starting with ${projects[index].name}`} aria-current={position.start === index ? 'true' : undefined} onClick={() => goTo(index)}>
+            <button type="button" key={projects[index].repo} aria-label={`Show projects starting with ${projects[index].name}`} aria-current={position.start === index ? 'true' : undefined} onClick={() => goTo(index)}>
               <span aria-hidden="true" />
             </button>
           ))}
