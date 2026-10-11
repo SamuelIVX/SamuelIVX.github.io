@@ -79,7 +79,7 @@ export default function Works() {
             <article className="project-slide" key={project.repo} aria-label={`${project.name}, project ${index + 1} of ${projects.length}`}>
               <div className="project-card">
                 <div className="project-visual">
-                  {project.image ? <img src={`/assets/${project.image}`} alt={`${project.name} preview`} width="1400" height="840" loading="lazy" /> : <Schedule />}
+                  {project.image ? <img src={project.image} alt={`${project.name} preview`} width="1400" height="840" loading="lazy" /> : <Schedule />}
                 </div>
                 <div className="project-copy">
                   <p className="eyebrow">{project.kind}</p>

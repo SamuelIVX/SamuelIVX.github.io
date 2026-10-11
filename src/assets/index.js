@@ -39,14 +39,6 @@ import MOTION from "./tech/motion.svg";
 import AOT from "./company/aot.jpeg";
 import AMAZONWEBSERVICES from "./company/amazonwebservices.jpeg";
 
-// Project screenshots
-import HEROBG from "./hero/herobg.png";
-import PAYCORE from "./projects/paycore.png";
-import CLARIFY from "./projects/clarify.png";
-import ECOMMERCE from "./projects/ecommerce.png";
-import CARWASH from "./projects/carwash.png";
-import DELTABASE from "./projects/deltabase.png";
-import FOODSENSE from "./projects/foodsense.png";
 
 export {
   // UI / navigation
@@ -79,11 +71,4 @@ export {
   AOT,
   AMAZONWEBSERVICES,
   // Projects / hero
-  HEROBG,
-  PAYCORE,
-  CLARIFY,
-  ECOMMERCE,
-  CARWASH,
-  DELTABASE,
-  FOODSENSE,
 };
