@@ -1,9 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self';" />
+    
+    <meta name="theme-color" content="#131A23" />
+    <script>
+      // Apply the saved palette before paint; storage may be unavailable in private browsers.
+      try {
+        const theme = localStorage.getItem('portfolio-theme');
+        if (theme === 'light' || theme === 'dark') {
+          document.documentElement.dataset.theme = theme;
+          document.querySelector('meta[name="theme-color"]').content = theme === 'light' ? '#F7F8FA' : '#131A23';
+        }
+      } catch {}
+    </script>
     <title>Samuel Hernandez Balderas | Software Engineer</title>
     <meta name="description" content="Software Engineer specializing in scalable solutions, process optimization, and data-driven development. Explore projects, skills, and experience." />
     <meta property="og:title" content="Samuel Hernandez Balderas | Software Engineer" />
@@ -14,8 +27,8 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Samuel Hernandez Balderas | Software Engineer" />
     <meta name="twitter:description" content="Software Engineer specializing in scalable solutions, process optimization, and data-driven development." />
-    <script type="module" crossorigin src="/assets/index-CV44WhCy.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-D6ZzP1Vr.css">
+    <script type="module" crossorigin src="/assets/index-CjRP_3Id.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dpq5z3f0.css">
   </head>
   <body>
     <div id="root"></div>
