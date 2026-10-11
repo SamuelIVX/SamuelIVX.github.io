@@ -34,32 +34,32 @@ without a matching task. No new skill install was necessary.
 
 ## Phase checklist
 
-- [ ] **00: Establish baseline and content.** Use supported Node matching CI, clean npm ci, record npm ls actual
+- [x] **00: Establish baseline and content.** Use supported Node matching CI, clean npm ci, record npm ls actual
       versions, baseline lint/test/build. Triage six reported high-severity install advisories with npm audit output,
       reachability and versions. Verify archived content/resume and authority, generate single production content
       module. Apply ponytail/codebase-design/React/dependency guidance. Do not guess runtime versions from the
       prototype.
-- [ ] **01: Port the approved shell/design.** Replace the old hero/navigation/about/contact/footer with B, retaining
+- [x] **01: Port the approved shell/design.** Replace the old hero/navigation/about/contact/footer with B, retaining
       native hash links and fluid layout. Tests cover viewport, left alignment, nav/menu and footer text. Apply
       frontend-design/React/web-design-guidelines. The diagrammed spacing-reduction/ASCII ideas were suggestions, not
       approved additions.
-- [ ] **02: Port content browsing.** Build carousel and experience tabs with named keyboard/focus/empty/many regression
+- [x] **02: Port content browsing.** Build carousel and experience tabs with named keyboard/focus/empty/many regression
       cases; show all honors. Keep complete resume copy and immediate tab state. Apply
       frontend-design/React/webapp-testing. Replace old contact-form-specific tests only with explicit
       mailto/removed-network contract tests; preserve unrelated coverage.
-- [ ] **03: Port persistent theme and motion.** One theme owner and before-paint startup path, button-origin wipe, live
+- [x] **03: Port persistent theme and motion.** One theme owner and before-paint startup path, button-origin wipe, live
       reduced motion and stable lifecycle. Isolate upstream DotGrid, retain notices, audit local patches and failure
       cleanup. Apply React/frontend/OWASP/browser guidance. Match all linked dense settings and recognize idle
       settlement.
-- [ ] **04: Optimize and measure.** Defer background, self-host licensed font, optimize images, remove obsolete tutorial
+- [x] **04: Optimize and measure.** Defer background, self-host licensed font, optimize images, remove obsolete tutorial
       assets/imports/dependencies after ownership checks. Add deterministic gzip budget checks and
       Lighthouse/interaction evidence. Apply performance/React/refactor guidance. Compare approved screenshots after
       each coherent extraction/optimization; changes must pass tests before further work.
-- [ ] **05: Harden actual surfaces.** Enforce tested CSP with appropriate GitHub Pages limits, remove unused EmailJS
+- [x] **05: Harden actual surfaces.** Enforce tested CSP with appropriate GitHub Pages limits, remove unused EmailJS
       configuration/network surface, retain explicit fixed URLs and only theme storage. Audit lockfile/advisories/copied
       licenses, observe production-preview network, run security checks. Apply OWASP/dependency/code-review; no
       hypothetical auth/database controls.
-- [ ] **06: Integrate and release.** Full lint/unit/build/browser/axe/performance/security gate under recorded
+- [x] **06: Integrate and release.** Full lint/unit/build/browser/axe/performance/security gate under recorded
       Node/tools; real device/VoiceOver/zoom pass. Require analyzed CodeRabbit completion, not ordinary review. Ensure
       deploy depends on required checks and uses their exact artifact. Keep generic workflow contracts. Prepare PR and
       previous-artifact rollback evidence, then deploy only when authorized and all gates pass; HTTP200 +
