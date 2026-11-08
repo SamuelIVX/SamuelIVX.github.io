@@ -4,6 +4,7 @@
  * avoid WebGL under jsdom.
  */
 import { render, screen, within } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { axe } from "jest-axe";
 import { describe, expect, it, vi } from "vitest";
 import App from "./App";
@@ -46,6 +47,34 @@ describe("App", () => {
     renderApp();
     const mailto = screen.getByRole("link", { name: /samuel05\.hb@gmail\.com/i });
     expect(mailto).toHaveAttribute("href", "mailto:samuel05.hb@gmail.com");
+  });
+
+  it("marks outside elements inert when mobile navigation menu is open", async () => {
+    const { container } = renderApp();
+    const menuToggle = screen.getByRole("button", { name: /menu/i });
+    const main = container.querySelector("#main");
+    const footer = container.querySelector("footer");
+    const headerControls = container.querySelector(".header-controls");
+    const brand = container.querySelector(".brand");
+
+    expect(main).not.toHaveAttribute("inert");
+    expect(footer).not.toHaveAttribute("inert");
+    expect(headerControls).not.toHaveAttribute("inert");
+    expect(brand).not.toHaveAttribute("inert");
+
+    await userEvent.click(menuToggle);
+
+    expect(main).toHaveAttribute("inert");
+    expect(footer).toHaveAttribute("inert");
+    expect(headerControls).toHaveAttribute("inert");
+    expect(brand).toHaveAttribute("inert");
+
+    await userEvent.click(menuToggle);
+
+    expect(main).not.toHaveAttribute("inert");
+    expect(footer).not.toHaveAttribute("inert");
+    expect(headerControls).not.toHaveAttribute("inert");
+    expect(brand).not.toHaveAttribute("inert");
   });
 
   it("has no accessibility violations on initial render", async () => {
