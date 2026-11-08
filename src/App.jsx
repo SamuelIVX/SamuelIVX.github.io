@@ -41,7 +41,7 @@ const App = () => {
       clearTimeout(fallbackTimer.current);
       document.documentElement.classList.add('theme-fallback');
       update();
-      fallbackTimer.current = setTimeout(() => document.documentElement.classList.remove('theme-fallback'), 1600);
+      fallbackTimer.current = setTimeout(() => document.documentElement.classList.remove('theme-fallback'), 350);
       return;
     }
     
